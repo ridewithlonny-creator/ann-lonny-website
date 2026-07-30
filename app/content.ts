@@ -68,8 +68,8 @@ export const lessons: Array<{
     alt: { en: "Placeholder photo for kids lessons", zh: "兒童課程 placeholder 照片" },
     title: { en: "Kids Lessons", zh: "兒童課程" },
     description: {
-      en: "[LESSON DESCRIPTION — confirm ages, format and requirements.]",
-      zh: "[課程介紹——請確認適合年齡、上課形式與條件。]",
+      en: "Patient, step-by-step learning that helps children build skills and confidence. Ages and lesson format are confirmed before booking.",
+      zh: "以耐心、清楚的步驟陪伴兒童建立技巧與信心；適合年齡與上課形式會在訂課前確認。",
     },
   },
   {
@@ -83,13 +83,13 @@ export const lessons: Array<{
     },
   },
   {
-    id: "beginners",
+    id: "families",
     image: "/assets/images/snow-lesson-placeholder.webp",
-    alt: { en: "Placeholder photo for beginner lessons", zh: "初學者課程 placeholder 照片" },
-    title: { en: "Beginner Lessons", zh: "初學者課程" },
+    alt: { en: "Placeholder photo for family lessons", zh: "家庭課程 placeholder 照片" },
+    title: { en: "Family Lessons", zh: "家庭課程" },
     description: {
-      en: "[LESSON DESCRIPTION — add the beginner learning approach.]",
-      zh: "[課程介紹——請補充初學者的學習方式。]",
+      en: "[LESSON DESCRIPTION — confirm the family lesson format, group size and requirements.]",
+      zh: "[課程介紹——請確認家庭課程的上課形式、人數與條件。]",
     },
   },
   {
@@ -98,8 +98,8 @@ export const lessons: Array<{
     alt: { en: "Ann&Lonny in a snowy mountain setting", zh: "Ann&Lonny 在雪山環境中的照片" },
     title: { en: "Technique Development", zh: "滑行技術提升" },
     description: {
-      en: "[LESSON DESCRIPTION — add the skills or goals covered.]",
-      zh: "[課程介紹——請補充可練習的技巧與目標。]",
+      en: "For students who want to improve their riding through detailed movement breakdowns, focused feedback and video analysis when useful.",
+      zh: "適合希望改善滑行的學生，透過動作拆解、練習回饋，並視需要搭配影片分析。",
     },
   },
 ];
@@ -126,8 +126,8 @@ export const instructors: Array<{
       zh: "APSI 單板三級 · CASI 單板二級教練 · APSI 雙板二級 · 雪崩技能訓練二級（AST 2）",
     },
     bio: {
-      en: "[SHORT BIO — add Lonny’s teaching style and introduction.]",
-      zh: "[簡短介紹——請補充 Lonny 的教學風格與自我介紹。]",
+      en: "Lonny specialises in teaching children and analysing advanced riding. Patient and detail-oriented, he breaks movements into clear steps and uses practice, feedback and video analysis to help students progress in a relaxed, friendly lesson. He enjoys ski and snowboard equally for the different experiences each one offers.",
+      zh: "Lonny 擅長兒童教學與進階滑行分析。他有耐心，也會把動作拆解成清楚的小步驟，透過反覆練習、即時回饋與影片分析，陪學生像朋友一樣自在學習。對他而言，雙板與單板各有不同的樂趣。",
     },
   },
   {
@@ -218,16 +218,16 @@ export const content = {
       eyebrow: "About us",
       title: "Learn with confidence. Enjoy every turn.",
       intro:
-        "Ann&Lonny are bilingual ski and snowboard instructors teaching in Perisher, New South Wales during the Southern Hemisphere season, and Niseko, Hokkaido during the Northern Hemisphere season.",
+        "We met while studying Leisure Sport at National Pingtung University of Science and Technology, then worked together as fitness coaches in Taiwan. Surfing was our favourite way to spend time outdoors; today, we are full-time ski and snowboard instructors following winter between the Southern and Northern Hemispheres.",
       photoLabel: "[LONNY & ANN PHOTO]",
       points: [
         {
           title: "Who we are",
-          text: "Two instructors who both teach ski and snowboard lessons in English and Chinese.",
+          text: "Two instructors who both teach ski and snowboard lessons in English and Chinese, with a shared background in sport and coaching.",
         },
         {
           title: "How we teach",
-          text: "[Explain your approach to safety, confidence, progress and enjoyment.]",
+          text: "Clear, friendly lessons shaped around each student’s pace, goals and confidence.",
         },
         {
           title: "Where we teach",
@@ -239,14 +239,14 @@ export const content = {
       eyebrow: "Lessons",
       title: "A lesson built around you.",
       intro:
-        "Explore the lesson formats below. Final availability and details are confirmed after you contact us.",
+        "Lessons for families, children, Chinese-speaking guests and students who want to improve their riding. Final details are confirmed after you contact us.",
       noPrice: "[PRICING IS CONFIRMED PRIVATELY AFTER LESSON DETAILS ARE DISCUSSED.]",
     },
     instructors: {
       eyebrow: "Meet your instructors",
       title: "Lonny & Ann",
       intro:
-        "Real photos and a short personal introduction will help new students know who they will be learning with.",
+        "Meet the two instructors who will personally help you build skills and confidence on snow.",
       languages: "Teaching languages",
       qualifications: "Qualifications",
     },
@@ -371,7 +371,7 @@ export const content = {
       linkPlaceholder: "Add this contact link in app/content.ts",
     },
     footer: {
-      tagline: "[SHORT BRAND TAGLINE]",
+      tagline: "Ski & snowboard lessons in English and Chinese.",
       rights: "All rights reserved.",
       privacy: "[PRIVACY NOTICE PLACEHOLDER]",
     },
@@ -406,16 +406,16 @@ export const content = {
       eyebrow: "關於我們",
       title: "建立信心，享受每一個轉彎。",
       intro:
-        "Ann&Lonny 是中英文雙語滑雪與單板教練。南半球雪季在澳洲新州 Perisher 教學，北半球雪季則在日本北海道二世谷教學。",
+        "我們是屏東科技大學休閒運動系的同學，畢業後曾在台灣一起擔任健身教練。當時最喜歡一起衝浪；現在，我們成為往返南北半球雪季的全職雙板與單板教練。",
       photoLabel: "[LONNY 與 ANN 合照]",
       points: [
         {
           title: "我們是誰",
-          text: "兩位都教授雙板與單板，並可使用中文或英文上課。",
+          text: "兩位都教授雙板與單板，並可使用中文或英文上課，也有共同的運動與教學背景。",
         },
         {
           title: "我們如何教學",
-          text: "[請說明你們如何重視安全、信心、進步與享受滑雪。]",
+          text: "以清楚、友善的方式，根據每位學生的步調、目標與信心調整課程。",
         },
         {
           title: "我們在哪裡教學",
@@ -426,13 +426,13 @@ export const content = {
     lessons: {
       eyebrow: "課程介紹",
       title: "根據你的需要安排課程。",
-      intro: "先了解以下課程類型；實際內容與可預約時間會在聯絡後確認。",
+      intro: "適合家庭、兒童、中文旅客，以及希望改善滑行技術的學生；實際內容與時間會在聯絡後確認。",
       noPrice: "[課程細節確認後，我們會私下提供價格。]",
     },
     instructors: {
       eyebrow: "教練介紹",
       title: "Lonny 與 Ann",
-      intro: "真實照片與簡短自我介紹，能讓新學生在上課前先認識教練。",
+      intro: "認識會親自陪你建立雪上技巧與信心的兩位教練。",
       languages: "教學語言",
       qualifications: "教練證照",
     },
@@ -465,7 +465,7 @@ export const content = {
       steps: [
         {
           title: "Step 1 — 聯絡我們",
-          text: "告訴我們預計日期、地點、人數，以及想學 Ski 還是 Snowboard。",
+          text: "告訴我們預計日期、地點、人數，以及想學雙板還是單板。",
         },
         {
           title: "Step 2 — 確認可安排時間",
@@ -554,7 +554,7 @@ export const content = {
       linkPlaceholder: "請在 app/content.ts 加入聯絡連結",
     },
     footer: {
-      tagline: "[品牌短句]",
+      tagline: "中英文雙板與單板課程。",
       rights: "保留所有權利。",
       privacy: "[隱私權聲明 PLACEHOLDER]",
     },

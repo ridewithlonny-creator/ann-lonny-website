@@ -49,22 +49,17 @@ export default function Home() {
   }, [locale]);
 
   useEffect(() => {
-    const elements = document.querySelectorAll<HTMLElement>("[data-reveal]");
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("is-visible");
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.12 },
-    );
+    if (!menuOpen) return;
 
-    elements.forEach((element) => observer.observe(element));
-    return () => observer.disconnect();
-  }, []);
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setMenuOpen(false);
+      }
+    };
+
+    window.addEventListener("keydown", closeOnEscape);
+    return () => window.removeEventListener("keydown", closeOnEscape);
+  }, [menuOpen]);
 
   const navigation = useMemo(
     () => [
@@ -93,7 +88,7 @@ export default function Home() {
           </a>
 
           <button
-            className="menu-toggle"
+            className={menuOpen ? "menu-toggle is-open" : "menu-toggle"}
             type="button"
             aria-expanded={menuOpen}
             aria-controls="primary-navigation"

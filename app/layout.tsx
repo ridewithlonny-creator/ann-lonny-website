@@ -20,6 +20,9 @@ export async function generateMetadata(): Promise<Metadata> {
       "滑雪課程",
       "單板課程",
     ],
+    icons: {
+      icon: [{ url: "/favicon.svg", type: "image/svg+xml" }],
+    },
     alternates: {
       canonical: baseUrl,
     },

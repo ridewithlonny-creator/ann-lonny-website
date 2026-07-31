@@ -14,6 +14,11 @@
 # testing
 /coverage
 
+# local caches
+/.cache/
+/.eslintcache
+*.tsbuildinfo
+
 # next.js
 /.next/
 /.vinext/
@@ -21,6 +26,7 @@
 
 # misc
 .DS_Store
+Thumbs.db
 *.pem
 
 # debug
@@ -31,6 +37,7 @@ yarn-error.log*
 
 # env files (can opt-in for committing if needed)
 .env*
+!.env.example
 
 # vercel
 .vercel
@@ -41,3 +48,12 @@ next-env.d.ts
 /.wrangler/
 /outputs/
 /work/
+
+# temporary files
+/tmp/
+/temp/
+*.tmp
+*.temp
+*.log
+*.bak
+*~

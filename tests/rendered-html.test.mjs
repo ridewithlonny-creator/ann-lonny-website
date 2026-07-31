@@ -1,11 +1,9 @@
 import assert from "node:assert/strict";
-import { access, readFile, readdir } from "node:fs/promises";
+import { access, readFile, stat } from "node:fs/promises";
 import test from "node:test";
 
-const developmentPreviewMeta =
-  /<meta(?=[^>]*\bname=["']codex-preview["'])(?=[^>]*\bcontent=["']development["'])[^>]*>/i;
-const templateRoot = new URL("../", import.meta.url);
-const previewRoot = new URL("../app/_sites-preview/", import.meta.url);
+const projectRoot = new URL("../", import.meta.url);
+const publicRoot = new URL("../public/", import.meta.url);
 
 async function render() {
   const workerUrl = new URL("../dist/server/index.js", import.meta.url);
@@ -28,64 +26,69 @@ async function render() {
   );
 }
 
-test("server-renders the starter loading skeleton", async () => {
+test("server-renders the Ann&Lonny website and launch metadata", async () => {
   const response = await render();
   assert.equal(response.status, 200);
   assert.match(response.headers.get("content-type") ?? "", /^text\/html\b/i);
 
   const html = await response.text();
-  assert.match(html, developmentPreviewMeta);
-  assert.match(html, /<title>Your site is taking shape<\/title>/i);
-  assert.match(html, /Building your site/);
-  assert.match(html, /Your site is taking shape/);
-  assert.match(
-    html,
-    /Your first version will appear here automatically when it’s ready\./,
-  );
-  assert.doesNotMatch(html, /Codex/);
-  assert.match(html, /react-loading-skeleton/);
-  assert.match(html, /role="status"/);
+  assert.match(html, /<title>Ann&amp;Lonny \| Personalised Ski &amp; Snowboard Lessons<\/title>/i);
+  assert.match(html, /<meta name="description" content="Friendly, professional ski and snowboard lessons/i);
+  assert.match(html, /<meta property="og:image" content="https?:\/\/[^\"]+\/og\.png"/i);
+  assert.match(html, /<meta property="og:image:width" content="1200"/i);
+  assert.match(html, /<meta property="og:image:height" content="630"/i);
+  assert.match(html, /<meta name="twitter:card" content="summary_large_image"/i);
+  assert.match(html, /<link rel="icon" href="\/favicon\.svg" type="image\/svg\+xml"/i);
+  assert.match(html, /<main id="main-content">/i);
+
+  for (const id of ["top", "about", "lessons", "instructors", "booking", "faq", "contact"]) {
+    assert.match(html, new RegExp(`<section id="${id}"`, "i"));
+  }
+
+  assert.match(html, /href="https:\/\/wa\.me\/61497131933\?text=/i);
+  assert.match(html, /href="https:\/\/wa\.me\/61459495550\?text=/i);
+  assert.match(html, /href="\/assets\/images\/contact\/ann-line-qr\.jpg"/i);
+  assert.match(html, /href="\/assets\/images\/contact\/ann-wechat-qr\.jpg"/i);
+  assert.match(html, /href="https:\/\/www\.instagram\.com\/ann_yu0309\/"/i);
+  assert.match(html, /<details class="privacy-notice" id="privacy-notice">/i);
+  assert.match(html, /Privacy Notice/i);
+  assert.match(html, /Last updated: 31 July 2026/i);
+  assert.match(html, /does not use advertising cookies, analytics trackers/i);
+  assert.doesNotMatch(html, /PRIVACY NOTICE PLACEHOLDER|隱私權聲明 PLACEHOLDER/i);
+  assert.doesNotMatch(html, /codex-preview|Your site is taking shape|Building your site/i);
 });
 
-test("keeps the loading skeleton scoped and disposable", async () => {
-  const [preview, css, page, layout, packageJson, files] = await Promise.all([
-    readFile(new URL("SkeletonPreview.tsx", previewRoot), "utf8"),
-    readFile(new URL("preview.css", previewRoot), "utf8"),
-    readFile(new URL("../app/page.tsx", import.meta.url), "utf8"),
-    readFile(new URL("../app/layout.tsx", import.meta.url), "utf8"),
-    readFile(new URL("../package.json", import.meta.url), "utf8"),
-    readdir(previewRoot),
-  ]);
+test("all local website assets referenced by the app are present", async () => {
+  const sourceFiles = [
+    "app/content.ts",
+    "app/globals.css",
+    "app/layout.tsx",
+    "app/page.tsx",
+  ];
+  const references = new Set();
 
-  assert.deepEqual(files.sort(), ["SkeletonPreview.tsx", "preview.css"]);
-  assert.match(preview, /from "react-loading-skeleton"/);
-  assert.match(preview, /baseColor="#eceae7"/);
-  assert.match(preview, /highlightColor="#f9f8f6"/);
-  assert.match(preview, /duration=\{2\.8\}/);
-  assert.match(preview, /sites-skeleton-search-placeholder/);
-  assert.match(packageJson, /"react-loading-skeleton": "3\.5\.0"/);
+  for (const file of sourceFiles) {
+    const source = await readFile(new URL(file, projectRoot), "utf8");
+    for (const match of source.matchAll(/\/(?:assets\/images\/[^\"'()\s]+|og\.png|favicon\.svg)/g)) {
+      references.add(match[0]);
+    }
+  }
 
-  const shellIndex = preview.indexOf('className="sites-skeleton-shell"');
-  const statusIndex = preview.indexOf('className="sites-skeleton-status"');
-  assert.ok(shellIndex >= 0 && statusIndex > shellIndex);
-  assert.match(css, /position:\s*fixed/);
-  assert.match(css, /inset:\s*0/);
-  assert.match(css, /opacity:\s*0\.52/);
-  assert.match(css, /prefers-reduced-motion:\s*reduce/);
-  assert.doesNotMatch(css, /#020617|canvas|pets|progress/i);
-  assert.doesNotMatch(
-    preview,
-    /loading-spinner|status-mark|status-progress|canvas|cookie|random/i,
-  );
+  assert.ok(references.size >= 10, "Expected the app to reference its launch image set");
+  for (const reference of references) {
+    const asset = new URL(reference.slice(1), publicRoot);
+    await access(asset);
+    assert.ok((await stat(asset)).size > 0, `${reference} should not be empty`);
+  }
+});
 
-  assert.match(page, /export const metadata:\s*Metadata/);
-  assert.match(page, /"codex-preview": "development"/);
-  assert.match(page, /<SkeletonPreview \/>/);
-  assert.match(layout, /title:\s*"Starter Project"/);
-  assert.doesNotMatch(layout, /codex-preview|_sites-preview|themeColor|\bViewport\b/);
-  assert.doesNotMatch(css, /(^|\s)(html|body)\s*\{/m);
+test("Open Graph image and favicon have valid launch dimensions and content", async () => {
+  const ogImage = await readFile(new URL("og.png", publicRoot));
+  assert.deepEqual([...ogImage.subarray(0, 8)], [137, 80, 78, 71, 13, 10, 26, 10]);
+  assert.equal(ogImage.readUInt32BE(16), 1200);
+  assert.equal(ogImage.readUInt32BE(20), 630);
 
-  await assert.rejects(
-    access(new URL("public/_sites-preview", templateRoot)),
-  );
+  const favicon = await readFile(new URL("favicon.svg", publicRoot), "utf8");
+  assert.match(favicon, /<svg\b/i);
+  assert.match(favicon, /viewBox="0 0 24 24"/i);
 });

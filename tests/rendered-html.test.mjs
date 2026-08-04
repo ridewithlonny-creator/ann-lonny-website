@@ -32,14 +32,18 @@ test("server-renders the Ann&Lonny website and launch metadata", async () => {
   assert.match(response.headers.get("content-type") ?? "", /^text\/html\b/i);
 
   const html = await response.text();
-  assert.match(html, /<title>Ann&amp;Lonny \| Personalised Ski &amp; Snowboard Lessons<\/title>/i);
-  assert.match(html, /<meta name="description" content="Friendly, professional ski and snowboard lessons/i);
+  assert.match(html, /<html lang="zh-Hant">/i);
+  assert.match(html, /<title>Ann&amp;Lonny｜專屬雙板與單板課程<\/title>/i);
+  assert.match(html, /<meta name="description" content="由 Ann 與 Lonny 提供個人化雙板與單板課程/i);
   assert.match(html, /<meta property="og:image" content="https?:\/\/[^\"]+\/og\.png"/i);
   assert.match(html, /<meta property="og:image:width" content="1200"/i);
   assert.match(html, /<meta property="og:image:height" content="630"/i);
   assert.match(html, /<meta name="twitter:card" content="summary_large_image"/i);
   assert.match(html, /<link rel="icon" href="\/favicon\.svg" type="image\/svg\+xml"/i);
   assert.match(html, /<main id="main-content">/i);
+  assert.match(html, /<div class="language-switcher" aria-label="選擇語言">/i);
+  assert.match(html, /aria-pressed="true">繁中<\/button>/i);
+  assert.match(html, /aria-pressed="false">EN<\/button>/i);
 
   for (const id of ["top", "about", "lessons", "instructors", "booking", "faq", "contact"]) {
     assert.match(html, new RegExp(`<section id="${id}"`, "i"));
@@ -51,9 +55,9 @@ test("server-renders the Ann&Lonny website and launch metadata", async () => {
   assert.match(html, /href="\/assets\/images\/contact\/ann-wechat-qr\.jpg"/i);
   assert.match(html, /href="https:\/\/www\.instagram\.com\/ann_yu0309\/"/i);
   assert.match(html, /<details class="privacy-notice" id="privacy-notice">/i);
-  assert.match(html, /Privacy Notice/i);
-  assert.match(html, /Last updated: 31 July 2026/i);
-  assert.match(html, /does not use advertising cookies, analytics trackers/i);
+  assert.match(html, /隱私權聲明/i);
+  assert.match(html, /最後更新日期：2026 年 7 月 31 日/i);
+  assert.match(html, /不使用廣告 Cookie、網站分析追蹤/i);
   assert.doesNotMatch(html, /PRIVACY NOTICE PLACEHOLDER|隱私權聲明 PLACEHOLDER/i);
   assert.doesNotMatch(html, /codex-preview|Your site is taking shape|Building your site/i);
 });

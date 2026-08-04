@@ -99,18 +99,6 @@ export default function Home() {
             <span>{siteConfig.brandName}</span>
           </a>
 
-          <button
-            className={menuOpen ? "menu-toggle is-open" : "menu-toggle"}
-            type="button"
-            aria-expanded={menuOpen}
-            aria-controls="primary-navigation"
-            aria-label={menuOpen ? t.nav.closeMenu : t.nav.openMenu}
-            onClick={() => setMenuOpen((current) => !current)}
-          >
-            <span />
-            <span />
-          </button>
-
           <nav
             id="primary-navigation"
             className={menuOpen ? "primary-nav is-open" : "primary-nav"}
@@ -123,26 +111,38 @@ export default function Home() {
                 </a>
               ))}
             </div>
-            <div className="language-switcher" aria-label={t.nav.language}>
-              <button
-                type="button"
-                className={locale === "en" ? "is-active" : ""}
-                aria-pressed={locale === "en"}
-                onClick={() => changeLocale("en")}
-              >
-                EN
-              </button>
-              <span aria-hidden="true">/</span>
-              <button
-                type="button"
-                className={locale === "zh" ? "is-active" : ""}
-                aria-pressed={locale === "zh"}
-                onClick={() => changeLocale("zh")}
-              >
-                繁中
-              </button>
-            </div>
           </nav>
+
+          <div className="language-switcher" aria-label={t.nav.language}>
+            <button
+              type="button"
+              className={locale === "zh" ? "is-active" : ""}
+              aria-pressed={locale === "zh"}
+              onClick={() => changeLocale("zh")}
+            >
+              繁中
+            </button>
+            <button
+              type="button"
+              className={locale === "en" ? "is-active" : ""}
+              aria-pressed={locale === "en"}
+              onClick={() => changeLocale("en")}
+            >
+              EN
+            </button>
+          </div>
+
+          <button
+            className={menuOpen ? "menu-toggle is-open" : "menu-toggle"}
+            type="button"
+            aria-expanded={menuOpen}
+            aria-controls="primary-navigation"
+            aria-label={menuOpen ? t.nav.closeMenu : t.nav.openMenu}
+            onClick={() => setMenuOpen((current) => !current)}
+          >
+            <span />
+            <span />
+          </button>
         </div>
       </header>
 

@@ -179,7 +179,7 @@ section[id] {
   display: flex;
   min-height: var(--header-height);
   align-items: center;
-  justify-content: space-between;
+  gap: 6px;
 }
 
 .brand {
@@ -271,29 +271,37 @@ section[id] {
 
 .language-switcher {
   display: flex;
-  margin-top: 14px;
-  padding-top: 14px;
+  margin-left: auto;
+  padding: 3px;
   align-items: center;
-  gap: 6px;
-  border-top: 1px solid rgba(255, 255, 255, 0.14);
+  gap: 2px;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.05);
 }
 
 .language-switcher button {
-  min-width: 44px;
-  min-height: 44px;
-  padding: 4px;
+  min-width: 40px;
+  min-height: 38px;
+  padding: 4px 8px;
   border: 0;
+  border-radius: 999px;
   background: transparent;
-  color: rgba(255, 255, 255, 0.55);
+  color: rgba(255, 255, 255, 0.7);
   cursor: pointer;
+  font-size: 0.76rem;
+  transition:
+    background-color 160ms ease,
+    color 160ms ease;
 }
 
-.language-switcher button:hover,
-.language-switcher button.is-active {
+.language-switcher button:hover {
   color: var(--white);
 }
 
 .language-switcher button.is-active {
+  background: var(--white);
+  color: var(--navy);
   font-weight: 760;
 }
 
@@ -1238,6 +1246,7 @@ a.contact-button:active {
     display: flex;
     width: auto;
     max-height: none;
+    margin-left: auto;
     padding: 0;
     align-items: center;
     gap: 24px;
@@ -1280,14 +1289,11 @@ a.contact-button:active {
   }
 
   .language-switcher {
-    margin: 0;
-    padding: 0 0 0 21px;
-    border-top: 0;
-    border-left: 1px solid rgba(255, 255, 255, 0.22);
+    margin-left: 18px;
   }
 
   .language-switcher button {
-    min-width: 34px;
+    min-width: 40px;
   }
 
   .hero {

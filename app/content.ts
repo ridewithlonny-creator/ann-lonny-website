@@ -9,7 +9,7 @@ type LocalizedText = Record<Locale, string>;
 
 export const siteConfig = {
   brandName: "Ann&Lonny",
-  defaultLocale: "en" as Locale,
+  defaultLocale: "zh" as Locale,
   features: {
     // Change to true after approved student testimonials are ready to publish.
     testimonials: false,
@@ -77,29 +77,30 @@ export const lessons: Array<{
   {
     id: "ski",
     image: "/assets/images/course-ski.webp",
-    objectPosition: "center 65%",
-    alt: { en: "Skier making a turn on a groomed slope", zh: "雙板滑雪者在整理雪道上轉彎" },
+    objectPosition: "center 50%",
+    alt: { en: "Skier carving a turn on a groomed slope", zh: "雙板滑雪者在雪道上刻滑轉彎" },
     title: { en: "Ski Lessons", zh: "雙板滑雪課程" },
     description: {
-      en: "From first turns to refining rhythm and control, each ski lesson is adjusted to your current ability, confidence and goals.",
-      zh: "從第一次轉彎，到改善節奏與控制，每堂雙板課程都會依照你的程度、信心與目標調整。",
+      en: "From your first turns to improving your skiing movements, every lesson is adjusted to your ability, confidence and goals. If you only have one to three days on snow, skiing can be a good place to start and may help you enjoy moving around the mountain sooner. The basics are relatively approachable, while advanced skiing takes time and focused practice to refine.",
+      zh: "從第一次轉彎，到改善滑行動作，每堂雙板課程都會依照你的程度、信心與目標調整。如果你只安排 1～3 天滑雪，雙板通常比較容易開始，也能較快享受在雪上滑行的樂趣；不過想要進階，仍需要花時間練習與調整動作。簡單來說，雙板入門較容易，進階則更需要持續練習。",
     },
   },
   {
     id: "snowboard",
     image: "/assets/images/course-snowboard.webp",
-    objectPosition: "center 62%",
-    alt: { en: "Snowboarder riding with a snow-covered mountain behind", zh: "單板滑雪者在雪山景色前方滑行" },
+    objectPosition: "center 34%",
+    alt: { en: "Snowboarder riding powder through a snowy forest", zh: "單板滑雪者在雪林深雪中滑行" },
     title: { en: "Snowboard Lessons", zh: "單板滑雪課程" },
     description: {
-      en: "Build a strong foundation or work on more confident, efficient riding through clear steps, focused practice and practical feedback.",
-      zh: "從建立穩定基礎，到更有信心且有效率地滑行，我們會透過清楚步驟、重點練習與實用回饋陪你進步。",
+      en: "From building a stable foundation to riding with more confidence and efficiency, we use clear steps, focused practice and practical feedback. If you prefer a more cautious pace, your instructor can provide hands-on support where appropriate to help you find the feeling safely. Snowboarding often involves more falls before linking turns, but once balance and edge control begin to click, progression can feel more natural. The beginning is usually more challenging, while later development can feel more straightforward.",
+      zh: "從建立穩定基礎，到更有信心且有效率地滑行，我們會透過清楚步驟、重點練習與實用回饋陪你進步。如果你比較謹慎，教練也可以在適合且安全的情況下提供手扶協助，幫助你找到動作感覺。單板在學會連續轉彎前通常比較容易摔倒，但找到平衡與用刃感覺後，後續進階往往會更順利。簡單來說，單板入門較具挑戰，進階則相對直覺。",
     },
   },
   {
     id: "kids",
     image: "/assets/images/course-kids.webp",
-    alt: { en: "Child happily playing in deep snow", zh: "孩子在深雪中開心玩雪" },
+    objectPosition: "49% 50%",
+    alt: { en: "Instructor with two young students at the ski area", zh: "教練與兩位兒童學員在雪場的合照" },
     title: { en: "Kids Lessons", zh: "兒童課程" },
     description: {
       en: "We have taught children racing in Australia, fast-progressing young learners, and children who arrived because their parents wanted them to ski. Every child is different, but they learn fastest when they feel happy and relaxed. If they are tired or need a break, we may pause for snow play, a snowball fight or a hot chocolate. Our priority is helping children genuinely enjoy skiing.",
@@ -266,7 +267,7 @@ export const content = {
         },
         {
           title: "How we teach",
-          text: "Clear, simple lessons shaped around each student’s pace, goals and confidence.",
+          text: "Clear, easy-to-understand lessons shaped around each student’s pace, goals and confidence.",
         },
         {
           title: "Where we teach",
@@ -295,11 +296,11 @@ export const content = {
       items: [
         {
           title: "Personalised Lessons",
-          text: "Lessons adapt to each student’s ability, goals, learning state and the terrain in front of us.",
+          text: "Lessons adapt to each student’s ability, goals, learning state and the terrain in front of us. Whether you are adventurous or prefer a more cautious pace, we can adjust the lesson at any time and break each movement into smaller, manageable steps.",
         },
         {
           title: "5 Seasons of Snow School Experience",
-          text: "Around 300–400 teaching hours each season in official ski and snowboard school environments.",
+          text: "We bring extensive experience from around 300–400 teaching hours each season in official snow schools. From children preparing for ski racing to adults in their sixties trying snowboarding for the first time, we have worked with students of many ages, abilities and learning styles. If you have any questions or concerns before the lesson, you are always welcome to contact us in advance.",
         },
         {
           title: "Clear Communication",
@@ -537,7 +538,7 @@ export const content = {
         },
         {
           title: "我們如何教學",
-          text: "以清楚、簡單的方式，根據每位學生的步調、目標與信心調整課程。",
+          text: "以清楚、好理解的方式，根據每位學生的步調、目標與信心調整課程。",
         },
         {
           title: "我們在哪裡教學",
@@ -564,11 +565,11 @@ export const content = {
       items: [
         {
           title: "根據學生需求調整課程",
-          text: "依照學生的程度、目標、學習狀態與當下地形，隨時調整課程內容與練習方式。",
+          text: "依照學生的程度、目標、學習狀態與當下地形，隨時調整課程內容與練習方式。不管你是勇敢嘗試，還是比較謹慎的學生，我們都能即時調整上課內容，也可以把每個動作拆解成更細的小步驟，讓不同學習類型的學生都能安心練習。",
         },
         {
           title: "5 季官方雪校教學經驗",
-          text: "每季約 300–400 小時，在官方雪校累積紮實的一線教學經驗。",
+          text: "我們擁有豐富的教學經驗，每季約 300–400 小時，在官方雪校累積紮實的一線教學時數。從準備參加競速的小朋友，到 60 多歲第一次學習單板的成人，我們都曾教過，也熟悉不同年齡、程度與學習方式的學生。如有任何疑問或擔心，都歡迎在課前先與我們討論。",
         },
         {
           title: "清楚易懂的教學",

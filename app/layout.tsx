@@ -10,9 +10,9 @@ export async function generateMetadata(): Promise<Metadata> {
   const baseUrl = `${protocol}://${host}`;
 
   return {
-    title: "Ann&Lonny | Personalised Ski & Snowboard Lessons",
+    title: "Ann&Lonny｜專屬雙板與單板課程",
     description:
-      "Friendly, professional ski and snowboard lessons designed around your goals, confidence and enjoyment.",
+      "由 Ann 與 Lonny 提供個人化雙板與單板課程，根據你的程度、目標與信心安排安全、專業且有趣的雪上學習體驗。",
     keywords: [
       "ski lessons",
       "snowboard lessons",
@@ -30,25 +30,25 @@ export async function generateMetadata(): Promise<Metadata> {
       type: "website",
       url: baseUrl,
       siteName: "Ann&Lonny",
-      title: "Ann&Lonny | Personalised Ski & Snowboard Lessons",
+      title: "Ann&Lonny｜專屬雙板與單板課程",
       description:
-        "Friendly, professional lessons designed around your goals, confidence and enjoyment.",
+        "根據你的程度、目標與信心，提供安全、專業且有趣的雙板與單板課程。",
       images: [
         {
           url: `${baseUrl}/og.png`,
           width: 1200,
           height: 630,
-          alt: "Ann&Lonny personalised ski and snowboard lessons",
+          alt: "Ann&Lonny 專屬雙板與單板課程",
         },
       ],
-      locale: "en_AU",
-      alternateLocale: ["zh_TW"],
+      locale: "zh_TW",
+      alternateLocale: ["en_AU"],
     },
     twitter: {
       card: "summary_large_image",
-      title: "Ann&Lonny | Personalised Ski & Snowboard Lessons",
+      title: "Ann&Lonny｜專屬雙板與單板課程",
       description:
-        "Friendly, professional lessons designed around your goals, confidence and enjoyment.",
+        "根據你的程度、目標與信心，提供安全、專業且有趣的雙板與單板課程。",
       images: [`${baseUrl}/og.png`],
     },
     robots: {
@@ -64,7 +64,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="zh-Hant">
       <body>{children}</body>
     </html>
   );

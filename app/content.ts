@@ -11,8 +11,8 @@ export const siteConfig = {
   brandName: "Ann&Lonny",
   defaultLocale: "zh" as Locale,
   features: {
-    // Change to true after approved student testimonials are ready to publish.
-    testimonials: false,
+    // Set to false to hide the student testimonials section.
+    testimonials: true,
   },
   contact: {
     // Add each person's links separately. A local QR image can be used when no public link is available.
@@ -188,40 +188,38 @@ export const instructors: Array<{
 
 export const testimonials: Array<{
   id: string;
-  quote: LocalizedText;
-  name: LocalizedText;
+  quote: string;
+  name: string;
   lesson: LocalizedText;
   region: LocalizedText;
 }> = [
   {
-    id: "testimonial-1",
-    quote: {
-      en: "[TESTIMONIAL PLACEHOLDER — replace with approved student feedback.]",
-      zh: "[學生評價 PLACEHOLDER——請替換為已獲同意使用的真實評價。]",
-    },
-    name: { en: "[STUDENT NAME / INITIALS]", zh: "[學生姓名／縮寫]" },
-    lesson: { en: "[LESSON TYPE]", zh: "[課程類型]" },
-    region: { en: "[COUNTRY / REGION]", zh: "[國家／地區]" },
+    id: "ingrid",
+    quote: "兩寶的滑雪初體驗很開心，謝謝你！希望下次有機會再來找ANN姊姊。Keep in touch!",
+    name: "Ingrid",
+    lesson: { en: "Kids Ski Lessons", zh: "兒童雙板課程" },
+    region: { en: "Perisher, Australia", zh: "澳洲 Perisher" },
   },
   {
-    id: "testimonial-2",
-    quote: {
-      en: "[TESTIMONIAL PLACEHOLDER — replace with approved student feedback.]",
-      zh: "[學生評價 PLACEHOLDER——請替換為已獲同意使用的真實評價。]",
-    },
-    name: { en: "[STUDENT NAME / INITIALS]", zh: "[學生姓名／縮寫]" },
-    lesson: { en: "[LESSON TYPE]", zh: "[課程類型]" },
-    region: { en: "[COUNTRY / REGION]", zh: "[國家／地區]" },
+    id: "anthony",
+    quote: "Thanks very much for the review.  The girls had a great experience, thanks for making it possible.",
+    name: "Anthony",
+    lesson: { en: "Kids Ski Lessons", zh: "兒童雙板課程" },
+    region: { en: "Perisher, Australia", zh: "澳洲 Perisher" },
   },
   {
-    id: "testimonial-3",
-    quote: {
-      en: "[TESTIMONIAL PLACEHOLDER — replace with approved student feedback.]",
-      zh: "[學生評價 PLACEHOLDER——請替換為已獲同意使用的真實評價。]",
-    },
-    name: { en: "[STUDENT NAME / INITIALS]", zh: "[學生姓名／縮寫]" },
-    lesson: { en: "[LESSON TYPE]", zh: "[課程類型]" },
-    region: { en: "[COUNTRY / REGION]", zh: "[國家／地區]" },
+    id: "dan-lee",
+    quote: "感謝Lonny教練， 今天每個彎 還有很多細節都能立馬揪錯， 知道我喜歡挑戰， 也讓我成功嘗試了在高級雪道換刃。還有衝小樹林 和怎麼蘑菇換刃\n因著每位學員工程度和喜好 制定教學方向， 這點我很喜歡， 人也很好👍 讚",
+    name: "Dan Lee",
+    lesson: { en: "Adult Snowboard Lessons", zh: "成人單板課程" },
+    region: { en: "Perisher, Australia", zh: "澳洲 Perisher" },
+  },
+  {
+    id: "neko",
+    quote: "感谢Lonny教练两个小时的教学，很有效率。最近一直困扰于澳洲很差的雪况下，无法在雪包很多的陡坡稳定地搓雪换刃，Lonny解释了澳洲体系在这种情况下的优势，因材施教，一堂课后得到了很大的改善。教的一些小技巧也很有利于找刃感。Lonny非常专业，也很会教学，希望有机会再上你的课。",
+    name: "Neko",
+    lesson: { en: "Adult Snowboard Lessons", zh: "成人單板課程" },
+    region: { en: "Perisher, Australia", zh: "澳洲 Perisher" },
   },
 ];
 
@@ -244,7 +242,6 @@ export const content = {
     common: {
       askLesson: "Ask About a Lesson",
       photoPlaceholder: "[PHOTO PLACEHOLDER]",
-      placeholder: "PLACEHOLDER",
       addLink: "[ADD LINK]",
     },
     hero: {
@@ -263,11 +260,11 @@ export const content = {
       points: [
         {
           title: "Who we are",
-          text: "Both of us have more than five seasons of official snow school experience, teach in Chinese or English, and share a background in sport and coaching.",
+          text: "Both of us have more than five seasons of official snow school experience and hold APSI Level 3 snowboard instructor qualifications. We teach in Chinese or English, and our shared background in sport and coaching helps us explain movement, technique and the theory behind them more clearly.",
         },
         {
           title: "How we teach",
-          text: "Clear, easy-to-understand lessons shaped around each student’s pace, goals and confidence.",
+          text: "Clear, easy-to-understand lessons shaped around each student’s pace, goals and confidence. We also consider the terrain, snow conditions and slope traffic, adjusting the lesson content whenever needed.",
         },
         {
           title: "Where we teach",
@@ -304,7 +301,7 @@ export const content = {
         },
         {
           title: "Clear Communication",
-          text: "Every movement is explained in terms of what to do, why it matters and how to do it. Our fitness coaching background also helps you understand how to use the relevant muscles and joints.",
+          text: "Every movement is explained in terms of what to do, why it matters and how to do it. Our fitness coaching background helps you understand how to use the relevant muscles and joints, while more than five seasons of official snow school teaching experience helps us identify the cause of a problem more quickly and explain how to correct it in clear, easy-to-understand terms.",
         },
         {
           title: "Safe and Enjoyable",
@@ -415,14 +412,14 @@ export const content = {
             "For Australia, please check the current price on the official Perisher website, as prices vary by lesson time and booking date. In Japan, a full-day lesson includes 5 teaching hours plus a 1-hour meal break and is generally JPY 110,000. Peak-season pricing may vary, so please ask us to confirm before booking.",
         },
         {
-          question: "Are lift passes and equipment included?",
+          question: "Why do our lessons in Japan cost more than some other instructors?",
           answer:
-            "No. Lesson fees do not include lift passes, equipment rental, meals, transport or personal insurance. If you need help with rentals or lift passes, please discuss it with us before the lesson.",
+            "We are both APSI Level 3 snowboard instructors. This advanced qualification reflects not only riding and teaching ability, but also the professional knowledge needed to train other instructors, so our Japan lesson rate is higher than a standard instructor rate. We can identify the root cause of movement issues more quickly and use one key adjustment to improve several related problems. Progress always depends on the student and conditions, but our goal is to help you improve more efficiently—for example, addressing in one lesson issues that might otherwise take multiple lessons—so you can spend more time enjoying skiing or snowboarding in Japan.",
         },
         {
           question: "What happens if the weather is bad?",
           answer:
-            "Unless the resort officially cancels lessons for safety reasons, lessons normally continue during snowfall, strong winds, poor visibility or partial lift closures.",
+            "Unless the resort officially cancels lessons for safety reasons, lessons normally continue during snowfall, strong winds, poor visibility or partial lift closures. We use the terrain, lifts and snow conditions available that day to choose exercises suited to your ability and goals, so poor weather does not mean you will miss out on meaningful learning.",
         },
       ],
     },
@@ -515,7 +512,6 @@ export const content = {
     common: {
       askLesson: "詢問課程",
       photoPlaceholder: "[照片 PLACEHOLDER]",
-      placeholder: "PLACEHOLDER",
       addLink: "[加入連結]",
     },
     hero: {
@@ -534,11 +530,11 @@ export const content = {
       points: [
         {
           title: "我們是誰",
-          text: "兩位都有 5 季以上官方雪校經驗，並可使用中文或英文上課，也有共同的運動與教學背景。",
+          text: "兩位都有 5 季以上官方雪校經驗，也都是 APSI 單板三級教練，並可使用中文或英文上課。我們共同的運動與教學背景，讓我們能把動作、技術與背後理論解釋得更清楚。",
         },
         {
           title: "我們如何教學",
-          text: "以清楚、好理解的方式，根據每位學生的步調、目標與信心調整課程。",
+          text: "以清楚、好理解的方式，根據每位學生的步調、目標與信心調整課程。我們也會同時考量地形、雪況與雪道人流，隨時調整上課內容。",
         },
         {
           title: "我們在哪裡教學",
@@ -573,7 +569,7 @@ export const content = {
         },
         {
           title: "清楚易懂的教學",
-          text: "每個動作都會清楚說明「做什麼、為什麼做、怎麼做」，並結合健身教練經驗，幫助你理解需要如何運用肌肉與關節。",
+          text: "每個動作都會清楚說明「做什麼、為什麼做、怎麼做」，並結合健身教練經驗，幫助你理解需要如何運用肌肉與關節。加上 5 季以上的官方雪校教學經驗，我們能更快找出問題的原因，並用清楚易懂的方式說明如何調整。",
         },
         {
           title: "安全並享受學習過程",
@@ -682,14 +678,14 @@ export const content = {
             "澳洲雪季請以 Perisher 官方網站的即時價格為準，價格會依上課時段與訂課日期變動。日本雪季的全日課程為 5 小時教學＋1 小時用餐時間，一般價格為 110,000 日圓；旺季價格可能調整，訂課前請先向我們詢問確認。",
         },
         {
-          question: "雪票和裝備是否包含？",
+          question: "為什麼我們在日本的課程價格比一般教練高？",
           answer:
-            "不包含。課程費用不包含雪票、雪具租借、餐飲、交通及個人保險；如需要租借或雪票方面的協助，請在課前與我們討論。",
+            "我們兩位都是 APSI 單板三級教練。三級資格不只代表個人滑行與教學能力，也包含培訓其他教練所需的專業能力，因此日本課程價格會高於一般教練。我們能更快找出動作問題的根本原因，並透過一個關鍵調整同時改善多個相關問題。實際進度仍會因學生程度與雪況而異，但我們的目標是幫助你更有效率地進步；例如，原本可能需要多堂課處理的問題，有機會在一堂課內找到共同原因並一起改善，讓你節省學習時間，把更多時間留給享受日本滑雪。",
         },
         {
           question: "如果天氣不好怎麼辦？",
           answer:
-            "除非雪場基於安全考量正式取消課程，否則遇到降雪、強風、能見度不佳或部分纜車停駛時，課程通常仍會照常進行。",
+            "除非雪場基於安全考量正式取消課程，否則遇到降雪、強風、能見度不佳或部分纜車停駛時，課程通常仍會照常進行。我們會依照當天開放的地形、纜車與雪況，安排適合你程度與目標的練習，因此不用擔心天氣不好就學不到東西。",
         },
       ],
     },

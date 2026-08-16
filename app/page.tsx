@@ -354,10 +354,9 @@ export default function Home() {
             <div className="testimonial-grid">
               {testimonials.map((testimonial) => (
                 <blockquote key={testimonial.id} data-reveal>
-                  <span className="placeholder-badge">{t.common.placeholder}</span>
-                  <p>“{testimonial.quote[locale]}”</p>
+                  <p>“{testimonial.quote}”</p>
                   <footer>
-                    <strong>{testimonial.name[locale]}</strong>
+                    <strong>{testimonial.name}</strong>
                     <span>
                       {testimonial.lesson[locale]} · {testimonial.region[locale]}
                     </span>

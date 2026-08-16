@@ -44,6 +44,17 @@ test("server-renders the Ann&Lonny website and launch metadata", async () => {
   assert.match(html, /<div class="language-switcher" aria-label="選擇語言">/i);
   assert.match(html, /aria-pressed="true">繁中<\/button>/i);
   assert.match(html, /aria-pressed="false">EN<\/button>/i);
+  assert.match(html, /都是 APSI 單板三級教練/i);
+  assert.match(html, /把動作、技術與背後理論解釋得更清楚/i);
+  assert.match(html, /同時考量地形、雪況與雪道人流/i);
+  assert.match(html, /隨時調整上課內容/i);
+  assert.match(html, /更快找出問題的原因/i);
+  assert.match(html, /用清楚易懂的方式說明如何調整/i);
+  assert.match(html, /為什麼我們在日本的課程價格比一般教練高/i);
+  assert.match(html, /原本可能需要多堂課處理的問題/i);
+  assert.doesNotMatch(html, /雪票和裝備是否包含/i);
+  assert.match(html, /依照當天開放的地形、纜車與雪況/i);
+  assert.match(html, /不用擔心天氣不好就學不到東西/i);
 
   for (const id of ["top", "about", "lessons", "instructors", "booking", "faq", "contact"]) {
     assert.match(html, new RegExp(`<section id="${id}"`, "i"));
@@ -58,8 +69,31 @@ test("server-renders the Ann&Lonny website and launch metadata", async () => {
   assert.match(html, /隱私權聲明/i);
   assert.match(html, /最後更新日期：2026 年 7 月 31 日/i);
   assert.match(html, /不使用廣告 Cookie、網站分析追蹤/i);
+  assert.match(html, /class="section testimonials-section"/i);
+  assert.match(html, /兩寶的滑雪初體驗很開心/i);
+  assert.match(html, /Thanks very much for the review/i);
+  assert.match(html, /感謝Lonny教練/i);
+  assert.match(html, /感谢Lonny教练两个小时的教学/i);
+  for (const name of ["Ingrid", "Anthony", "Dan Lee", "Neko"]) {
+    assert.match(html, new RegExp(`<strong>${name}</strong>`, "i"));
+  }
+  assert.equal((html.match(/<blockquote\b/gi) ?? []).length, 4);
   assert.doesNotMatch(html, /PRIVACY NOTICE PLACEHOLDER|隱私權聲明 PLACEHOLDER/i);
+  assert.doesNotMatch(html, /TESTIMONIAL PLACEHOLDER|學生評價 PLACEHOLDER|placeholder-badge/i);
   assert.doesNotMatch(html, /codex-preview|Your site is taking shape|Building your site/i);
+});
+
+test("published testimonials contain no placeholder source", async () => {
+  const [contentSource, pageSource, stylesheet] = await Promise.all([
+    readFile(new URL("app/content.ts", projectRoot), "utf8"),
+    readFile(new URL("app/page.tsx", projectRoot), "utf8"),
+    readFile(new URL("app/globals.css", projectRoot), "utf8"),
+  ]);
+
+  assert.doesNotMatch(
+    `${contentSource}\n${pageSource}\n${stylesheet}`,
+    /TESTIMONIAL PLACEHOLDER|學生評價 PLACEHOLDER|placeholder-badge/i,
+  );
 });
 
 test("all local website assets referenced by the app are present", async () => {

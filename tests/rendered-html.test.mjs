@@ -50,6 +50,9 @@ test("server-renders the Ann&Lonny website and launch metadata", async () => {
   assert.match(html, /隨時調整上課內容/i);
   assert.match(html, /更快找出問題的原因/i);
   assert.match(html, /用清楚易懂的方式說明如何調整/i);
+  assert.match(html, /滑雪是一項極限運動/i);
+  assert.match(html, /讓 Ann 帶著你們/i);
+  assert.match(html, /用安全、簡單的方式享受滑雪的樂趣/i);
   assert.match(html, /為什麼我們在日本的課程價格比一般教練高/i);
   assert.match(html, /原本可能需要多堂課處理的問題/i);
   assert.doesNotMatch(html, /雪票和裝備是否包含/i);

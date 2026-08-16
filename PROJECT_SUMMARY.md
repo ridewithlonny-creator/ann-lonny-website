@@ -6,7 +6,7 @@
 
 - 最後核對日期：2026 年 8 月 16 日。
 - 核對範圍：目前儲存庫內的程式碼、設定、文件、測試與 `public/` 圖片資產。
-- 核對時的程式版本：`main` 分支，提交 `43a41bf`（`Publish completed Ann&Lonny website updates`），另有學生評價功能、「我們是誰」文案、測試與文件的 working tree changes。
+- 核對時的程式版本：`main` 分支，提交 `fb69522`（`Publish testimonials and teaching updates`），另有本次部署紀錄的 working tree changes。
 - 本摘要只記錄儲存庫中已存在或既有文件已明確列出的內容，不代表尚未寫入儲存庫的口頭決定。
 
 ## 1. Project overview
@@ -43,6 +43,11 @@ Ann&Lonny 是一個繁體中文／英文雙語的單頁式個人品牌網站，�
 - `pnpm run lint`：ESLint。
 - `pnpm run typecheck`：`tsc --noEmit`。
 
+### 部署狀態
+
+- 對外使用的 Vercel 正式網站：<https://ann-lonny-website.vercel.app/>；此網址必須保留，既有學生不需要更換連結。
+- OpenAI Sites 專案只保留作內部用途，已恢復為僅限擁有者存取，不作為對外網站。
+
 ## 3. Brand identity
 
 - 品牌名稱：Ann&Lonny。
@@ -73,6 +78,7 @@ Ann&Lonny 是一個繁體中文／英文雙語的單頁式個人品牌網站，�
 - 單頁式 Landing Page，包含 Header、Hero、About、Lessons、Instructors、Why Learn With Us、Booking Process、FAQ、Contact 與 Footer。
 - 6 種課程卡片：雙板、單板、兒童、成人、家庭、雪山探索與滑行紀錄。
 - 2 張教練卡片，包含照片、主教項目、語言、證照與簡介。
+- Ann 的中英文簡介說明滑雪雖屬極限運動，但掌握合適的安全範圍與速度後，也能成為全家共同體驗的活動，並強調以安全、簡單的方式帶領家庭享受滑雪。
 - 「我們是誰」中英文文案說明兩位都是 APSI 單板三級教練，並能清楚解釋動作、技術與背後理論。
 - 日本／澳洲訂課流程切換器，各自顯示 5 個步驟與確認提醒。
 - 8 個 FAQ，使用原生 `<details>`／`<summary>` 收合元件；第 7 題說明兩位三級教練在日本的課程價格與教學效率價值，並避免保證固定學習成果；第 8 題說明天候不佳時會依開放地形、纜車與雪況安排合適練習。

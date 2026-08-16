@@ -180,8 +180,8 @@ export const instructors: Array<{
       zh: "APSI 單板三級 · CASI 單板二級 · APSI 雙板二級 · 雪崩技能訓練二級（AST 2）",
     },
     bio: {
-      en: "Ann has always loved sport, from volleyball, surfing and fitness to competing in powerlifting. She teaches with patience, adapts her explanations to how each student learns, and provides immediate feedback throughout the lesson.",
-      zh: "Ann 喜歡各種運動，從排球、衝浪、健身，到曾經參加健力比賽。她的教學耐心，會依照每位學生的理解方式提供不同的講解，並在課程中給予即時回饋。",
+      en: "Ann has always loved sport, from volleyball, surfing and fitness to competing in powerlifting. She teaches with patience, adapts her explanations to how each student learns, and provides immediate feedback throughout the lesson. Snow sports are action sports, but when safety boundaries and speed are managed well, they can be enjoyed by the whole family. Ann will guide your family through a safe, approachable way to enjoy the fun of skiing together.",
+      zh: "Ann 喜歡各種運動，從排球、衝浪、健身，到曾經參加健力比賽。她的教學耐心，會依照每位學生的理解方式提供不同的講解，並在課程中給予即時回饋。滑雪是一項極限運動，但只要掌握合適的安全範圍與速度，也能成為全家大小都能一起體驗的活動。讓 Ann 帶著你們，用安全、簡單的方式享受滑雪的樂趣！",
     },
   },
 ];

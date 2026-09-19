@@ -6,7 +6,7 @@
 
 - 最後核對日期：2026 年 9 月 19 日。
 - 核對範圍：目前儲存庫內的程式碼、設定、文件、測試與 `public/` 圖片資產。
-- 核對時的程式版本：`main` 分支，提交 `61e8efa`（`Add Ann family lesson introduction`），另有既有部署紀錄、課程價格與區塊排序的 working tree changes。
+- 核對時的正式程式版本：遠端 `main` 的 `70cf0a1`（`Publish lesson pricing, booking updates and new about photo`）；透過 GitHub 連線發布。本機 HEAD 仍為 `61e8efa`，工作目錄保留已發布修改，下次 Git 操作前須先同步遠端，避免覆蓋新提交。
 - 本摘要只記錄儲存庫中已存在或既有文件已明確列出的內容，不代表尚未寫入儲存庫的口頭決定。
 
 ## 1. Project overview
@@ -48,7 +48,7 @@ Ann&Lonny 是一個繁體中文／英文雙語的單頁式個人品牌網站，�
 - 對外使用的 Vercel 正式網站：<https://ann-lonny-website.vercel.app/>；此網址必須保留，既有學生不需要更換連結。
 - 2026 年 8 月 16 日已將提交 `61e8efa` 成功發布至同一個 Vercel 正式網址，包含 Ann 的親子滑雪簡介更新。
 - OpenAI Sites 專案只保留作內部用途，已恢復為僅限擁有者存取，不作為對外網站。
-- 2026 年 9 月 18–19 日的價格表、澳洲訂課流程、兒童年齡說明、區塊排序與 About 合照修改目前為本機版本，尚未部署。
+- 2026 年 9 月 19 日已將價格表、澳洲訂課流程、兒童年齡說明、區塊排序與 About 合照發布至原 Vercel 網址；提交 `70cf0a1` 的 Vercel 狀態為 success，且已在正式網站驗證內容與中英文切換。
 
 ## 3. Brand identity
 

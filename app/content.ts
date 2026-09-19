@@ -9,7 +9,7 @@ type LocalizedText = Record<Locale, string>;
 
 // Tax-inclusive full-day rates per group, with one instructor.
 export const japanLessonRates = [
-  { id: "niseko", location: { en: "Hirafu / Annupuri", zh: "Hirafu／Annupuri" }, amount: "110,000" },
+  { id: "niseko", location: { en: "Hirafu / Annupuri", zh: "Hirafu（比羅夫）／Annupuri（安努普利）" }, amount: "110,000" },
   { id: "rusutsu", location: { en: "Rusutsu", zh: "留壽都 Rusutsu" }, amount: "130,000" },
 ];
 
@@ -269,7 +269,7 @@ export const content = {
       points: [
         {
           title: "Who we are",
-          text: "Both of us have more than five seasons of official snow school experience and hold APSI Level 3 snowboard instructor qualifications. We teach in Chinese or English, and our shared background in sport and coaching helps us explain movement, technique and the theory behind them more clearly.",
+          text: "Both of us have more than five seasons of official snow school experience and hold APSI Snowboard Level 3 and Alpine Level 2 instructor qualifications. We teach in Chinese or English, and our shared background in sport and coaching helps us explain movement, technique and the theory behind them more clearly.",
         },
         {
           title: "How we teach",
@@ -420,6 +420,16 @@ export const content = {
       intro: "If your question is not covered here, contact us and we will be happy to discuss it with you.",
       items: [
         {
+          question: "Why do our lessons in Japan cost more than some other instructors?",
+          answer:
+            "We are both APSI Level 3 snowboard instructors. This advanced qualification reflects not only riding and teaching ability, but also the professional knowledge needed to train other instructors, so our Japan lesson rate is higher than a standard instructor rate. We can identify the root cause of movement issues more quickly and use one key adjustment to improve several related problems. Progress always depends on the student and conditions, but our goal is to help you improve more efficiently—for example, addressing in one lesson issues that might otherwise take multiple lessons—so you can spend more time enjoying skiing or snowboarding in Japan.",
+        },
+        {
+          question: "Can I arrange a lesson if I am staying in Hanazono?",
+          answer:
+            "Our current plan is to start lessons in Hirafu or Annupuri, then ski or snowboard over to Hanazono, depending on your ability and the trails and lifts open that day. Hanazono's official rules for the upcoming season have not yet been announced; we plan to check again in October 2026. Final arrangements remain subject to the official rules.",
+        },
+        {
           question: "Does sending an enquiry confirm my booking?",
           answer:
             "No. Your lesson is confirmed only after the applicable booking and payment steps are complete and you receive our private or written confirmation.",
@@ -428,11 +438,6 @@ export const content = {
           question: "Can I request a specific instructor?",
           answer:
             "Yes. You are also welcome to book both of us for the same lesson, which can make the lesson more flexible. All arrangements remain subject to instructor availability.",
-        },
-        {
-          question: "Can I arrange a lesson if I am staying in HANAZONO?",
-          answer:
-            "Our current plan is to start lessons in Hirafu or Annupuri, then ski or snowboard over to HANAZONO, depending on your ability and the trails and lifts open that day. HANAZONO's official rules for the upcoming season have not yet been announced; we plan to check again in October 2026. Final arrangements remain subject to the official rules.",
         },
         {
           question: "What is the minimum age for lessons?",
@@ -448,11 +453,6 @@ export const content = {
           question: "How is the lesson price confirmed?",
           answer:
             `In Japan, a full-day lesson starting in Hirafu or Annupuri costs JPY ${japanLessonRates[0].amount}; a lesson starting in Rusutsu costs JPY ${japanLessonRates[1].amount}. Prices include tax and cover one instructor for a group of up to 4 students, not a per-person fee. The day includes 5 teaching hours and a 1-hour meal break. Peak-season prices are the same; half-day lessons are not currently available. Lift passes, equipment rental, meals and transport are extra. For Australia, please check the current price on the official Perisher website, as prices vary by lesson time and booking date.`,
-        },
-        {
-          question: "Why do our lessons in Japan cost more than some other instructors?",
-          answer:
-            "We are both APSI Level 3 snowboard instructors. This advanced qualification reflects not only riding and teaching ability, but also the professional knowledge needed to train other instructors, so our Japan lesson rate is higher than a standard instructor rate. We can identify the root cause of movement issues more quickly and use one key adjustment to improve several related problems. Progress always depends on the student and conditions, but our goal is to help you improve more efficiently—for example, addressing in one lesson issues that might otherwise take multiple lessons—so you can spend more time enjoying skiing or snowboarding in Japan.",
         },
         {
           question: "What happens if the weather is bad?",
@@ -575,7 +575,7 @@ export const content = {
       points: [
         {
           title: "我們是誰",
-          text: "兩位都有 5 季以上官方雪校經驗，也都是 APSI 單板三級教練，並可使用中文或英文上課。我們共同的運動與教學背景，讓我們能把動作、技術與背後理論解釋得更清楚。",
+          text: "兩位都有 5 季以上官方雪校經驗，也都持有 APSI 單板三級與雙板二級資格，並可使用中文或英文上課。我們共同的運動與教學背景，讓我們能把動作、技術與背後理論解釋得更清楚。",
         },
         {
           title: "我們如何教學",
@@ -723,6 +723,16 @@ export const content = {
       intro: "如果這裡沒有回答到你的問題，歡迎直接聯絡我們討論。",
       items: [
         {
+          question: "為什麼我們在日本的課程價格比一般教練高？",
+          answer:
+            "我們兩位都是 APSI 單板三級教練。三級資格不只代表個人滑行與教學能力，也包含培訓其他教練所需的專業能力，因此日本課程價格會高於一般教練。我們能更快找出動作問題的根本原因，並透過一個關鍵調整同時改善多個相關問題。實際進度仍會因學生程度與雪況而異，但我們的目標是幫助你更有效率地進步；例如，原本可能需要多堂課處理的問題，有機會在一堂課內找到共同原因並一起改善，讓你節省學習時間，把更多時間留給享受日本滑雪。",
+        },
+        {
+          question: "住在 Hanazono，可以安排課程嗎？",
+          answer:
+            "目前規劃需從 Hirafu（比羅夫） 或 Annupuri（安努普利） 開始上課，再依學生程度及當天雪道、纜車開放情況，滑行前往 Hanazono。Hanazono 本雪季的官方規定尚未公布，預計於 2026 年 10 月多再次確認，最終安排以官方規定為準。",
+        },
+        {
           question: "送出詢問後，是否代表已經完成訂課？",
           answer: "不是。完成適用的訂課與付款流程，並收到我們的私訊或書面確認後，課程才算正式成立。",
         },
@@ -730,11 +740,6 @@ export const content = {
           question: "可以指定教練嗎？",
           answer:
             "可以。也歡迎同時預約我們兩位一起上課，雙教練安排能讓課程更加彈性、自由；實際安排仍需依教練時間確認。",
-        },
-        {
-          question: "住在 HANAZONO，可以安排課程嗎？",
-          answer:
-            "目前規劃需從 Hirafu 或 Annupuri 開始上課，再依學生程度及當天雪道、纜車開放情況，滑行前往 HANAZONO。HANAZONO 本雪季的官方規定尚未公布，預計於 2026 年 10 月多再次確認，最終安排以官方規定為準。",
         },
         {
           question: "最小幾歲能開始上課？",
@@ -749,12 +754,7 @@ export const content = {
         {
           question: "課程價格如何確認？",
           answer:
-            `日本全日課從 Hirafu 或 Annupuri 開始為 ${japanLessonRates[0].amount} 日圓，從留壽都 Rusutsu 開始為 ${japanLessonRates[1].amount} 日圓，皆已含稅。費用為每位教練帶一組、最多 4 人的整組價格，不是每人費用。全日安排為 5 小時教學＋1 小時用餐，旺季價格相同，目前不提供半日課。雪票、雪具租借、餐飲與交通需另外支付。澳洲課程請以 Perisher 官方網站的即時價格為準，價格會依上課時段與訂課日期變動。`,
-        },
-        {
-          question: "為什麼我們在日本的課程價格比一般教練高？",
-          answer:
-            "我們兩位都是 APSI 單板三級教練。三級資格不只代表個人滑行與教學能力，也包含培訓其他教練所需的專業能力，因此日本課程價格會高於一般教練。我們能更快找出動作問題的根本原因，並透過一個關鍵調整同時改善多個相關問題。實際進度仍會因學生程度與雪況而異，但我們的目標是幫助你更有效率地進步；例如，原本可能需要多堂課處理的問題，有機會在一堂課內找到共同原因並一起改善，讓你節省學習時間，把更多時間留給享受日本滑雪。",
+            `日本全日課從 Hirafu（比羅夫） 或 Annupuri（安努普利） 開始為 ${japanLessonRates[0].amount} 日圓，從留壽都 Rusutsu 開始為 ${japanLessonRates[1].amount} 日圓，皆已含稅。費用為每位教練帶一組、最多 4 人的整組價格，不是每人費用。全日安排為 5 小時教學＋1 小時用餐，旺季價格相同，目前不提供半日課。雪票、雪具租借、餐飲與交通需另外支付。澳洲課程請以 Perisher 官方網站的即時價格為準，價格會依上課時段與訂課日期變動。`,
         },
         {
           question: "如果天氣不好怎麼辦？",

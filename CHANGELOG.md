@@ -15,6 +15,10 @@
 
 ### Changed
 
+- 「我們是誰」補充兩位都持有 APSI 單板三級與雙板二級資格，同步英文並保留其餘教學背景說明。
+- 中文 FAQ 與價目表的 Hirafu、Annupuri 加上比羅夫、安努普利中文名稱，英文介面不變。
+- 將 FAQ 中的雪場名稱大小寫統一為 `Hanazono`，同步中英文及回歸測試。
+- 將中英文 FAQ 的價格價值說明排第一並預設展開，HANAZONO 排第二，其餘問題保留原文及相對順序；本次修改僅在本機預覽。
 - 將中英文主要日本地區標示改為北海道 ACCENT，保留 Hirafu／Annupuri 與 Rusutsu 價格起點。
 - 將 FAQ 第 3 題改為 HANAZONO 暫定上課安排及 2026 年 10 月再次確認提醒，第 5 題明列澳洲私人課每位教練最多 5 人、日本維持 4 人。
 - 將「關於我們」照片換為使用者提供的 APSI 背心合照，更新中英文替代文字並調整顯示位置，保留原始照片與舊圖。
@@ -33,12 +37,16 @@
 
 ### Verification
 
+- 更新 FAQ 排序及僅第一題預設展開的回歸檢查，通過 lint、typecheck、兩種正式建置及 6 項測試。
 - 本次本機修改通過 lint、typecheck、Next.js／vinext 建置及 6 項測試，並確認中英文 FAQ、390／820／1440px 排版與無瀏覽器錯誤。
 - 補充最低年齡、一對一建議及新合照路徑回歸檢查，並確認中英文澳洲流程與手機、桌面照片顯示。
 - 通過 lint、typecheck、Next.js 與 vinext 正式建置、5 項測試，以及中英文價格切換、獨立訂課狀態、手機導覽與響應式畫面檢查。
 
 ### Documentation
 
+- 更新 `PROJECT_SUMMARY.md` 的「我們是誰」資格說明與未發布狀態，並同步本紀錄。
+- 同步 `PROJECT_SUMMARY.md` 的雪場中文名稱及未發布狀態，並更新本紀錄。
+- 同步 `PROJECT_SUMMARY.md` 的 FAQ 題序、預設展開與未發布狀態，並記錄於 `CHANGELOG.md`。
 - 更新 `PROJECT_SUMMARY.md` 的地區、FAQ、Instagram 與 HANAZONO 待確認事項，明列本次修改尚未發布，並同步 `CHANGELOG.md`。
 - 同步 `PROJECT_SUMMARY.md` 的澳洲訂課流程與兒童年齡建議，並記錄於 `CHANGELOG.md`。
 - 更新 `PROJECT_SUMMARY.md` 的核對日期、先呈現教學價值的頁面順序、價格切換與未部署狀態，並同步 `CHANGELOG.md`。

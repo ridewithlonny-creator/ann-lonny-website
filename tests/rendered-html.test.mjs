@@ -45,6 +45,7 @@ test("server-renders the Ann&Lonny website and launch metadata", async () => {
   assert.match(html, /aria-pressed="true">繁中<\/button>/i);
   assert.match(html, /aria-pressed="false">EN<\/button>/i);
   assert.match(html, /都是 APSI 單板三級教練/i);
+  assert.match(html, /也都持有 APSI 單板三級與雙板二級資格/);
   assert.match(html, /把動作、技術與背後理論解釋得更清楚/i);
   assert.match(html, /同時考量地形、雪況與雪道人流/i);
   assert.match(html, /隨時調整上課內容/i);
@@ -107,14 +108,21 @@ test("sections follow the agreed reading order and pricing defaults to Japan", a
   assert.match(html, /130,000/);
 });
 
-test("Hokkaido, HANAZONO FAQ, group limits and shared Instagram render correctly", async () => {
+test("Hokkaido, Hanazono FAQ, group limits and shared Instagram render correctly", async () => {
   const html = await (await render()).text();
   assert.match(html, /日本北海道 ACCENT/);
   assert.doesNotMatch(html, /日本北海道二世谷|日本二世谷 Accent/);
   const questions = [...html.matchAll(/<summary><span>(\d+)<\/span>(.*?)<i /g)];
-  assert.match(questions[2][2], /住在 HANAZONO/);
-  assert.match(questions[4][2], /最多幾人/);
-  assert.match(html, /Hirafu 或 Annupuri 開始上課/);
+  assert.match(questions[0][2], /為什麼我們在日本的課程價格比一般教練高/);
+  assert.match(questions[1][2], /住在 Hanazono/);
+  assert.match(questions[5][2], /最多幾人/);
+  const faq = html.match(/<div class="faq-list"[^>]*>([\s\S]*?)<\/section>/)[1];
+  const details = [...faq.matchAll(/<details([^>]*)>/g)];
+  assert.equal(details.length, 8);
+  assert.match(details[0][1], /\bopen\b/);
+  for (const detail of details.slice(1)) assert.doesNotMatch(detail[1], /\bopen\b/);
+  assert.match(html, /Hirafu（比羅夫） 或 Annupuri（安努普利） 開始上課/);
+  assert.match(html, /Hirafu（比羅夫）／Annupuri（安努普利）/);
   assert.match(html, /2026 年 10 月多再次確認/);
   assert.match(html, /澳洲私人教練課每位教練最多帶 5 人/);
   assert.match(html, /日本課程每位教練帶一組，最多 4 人/);

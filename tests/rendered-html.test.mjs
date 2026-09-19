@@ -93,7 +93,7 @@ test("server-renders the Ann&Lonny website and launch metadata", async () => {
 
 test("sections follow the agreed reading order and pricing defaults to Japan", async () => {
   const html = await (await render()).text();
-  const order = ["top", "about", "lessons", "instructors", "why", "testimonials", "booking", "pricing", "faq", "contact"];
+  const order = ["top", "about", "lessons", "instructors", "why", "testimonials", "booking", "pricing", "faq", "contact", "instagram"];
   let previous = -1;
   for (const id of order) {
     const position = html.indexOf(`<section id="${id}"`);
@@ -105,6 +105,23 @@ test("sections follow the agreed reading order and pricing defaults to Japan", a
   assert.match(html, /aria-pressed="false" aria-controls="pricing-region-panel">澳洲 · Perisher<\/button>/);
   assert.match(html, /110,000/);
   assert.match(html, /130,000/);
+});
+
+test("Hokkaido, HANAZONO FAQ, group limits and shared Instagram render correctly", async () => {
+  const html = await (await render()).text();
+  assert.match(html, /日本北海道 ACCENT/);
+  assert.doesNotMatch(html, /日本北海道二世谷|日本二世谷 Accent/);
+  const questions = [...html.matchAll(/<summary><span>(\d+)<\/span>(.*?)<i /g)];
+  assert.match(questions[2][2], /住在 HANAZONO/);
+  assert.match(questions[4][2], /最多幾人/);
+  assert.match(html, /Hirafu 或 Annupuri 開始上課/);
+  assert.match(html, /2026 年 10 月多再次確認/);
+  assert.match(html, /澳洲私人教練課每位教練最多帶 5 人/);
+  assert.match(html, /日本課程每位教練帶一組，最多 4 人/);
+  assert.match(html, /href="https:\/\/www\.instagram\.com\/alcouplelife\/" target="_blank" rel="noopener noreferrer"/);
+  assert.match(html, /@alcouplelife/);
+  assert.match(html, /href="https:\/\/www\.instagram\.com\/lonny0614\/"/);
+  assert.match(html, /href="https:\/\/www\.instagram\.com\/ann_yu0309\/"/);
 });
 
 test("published testimonials contain no placeholder source", async () => {

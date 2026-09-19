@@ -1162,6 +1162,20 @@ a.contact-button:active {
   color: var(--ink-soft);
 }
 
+.social-panel {
+  max-width: 780px;
+  text-align: center;
+}
+
+.social-panel .section-lead {
+  margin: 24px auto;
+}
+
+.social-handle {
+  margin: 0 0 20px;
+  font-weight: 600;
+}
+
 .site-footer {
   padding: 52px 0;
   border-top: 1px solid rgba(255, 255, 255, 0.12);

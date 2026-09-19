@@ -529,6 +529,17 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <section id="instagram" className="section section-tinted" aria-labelledby="instagram-title">
+        <div className="container social-panel">
+          <p className="eyebrow">{t.social.eyebrow}</p>
+          <h2 id="instagram-title">{t.social.title}</h2>
+          <p className="section-lead">{t.social.description}</p>
+          <p className="social-handle">@alcouplelife</p>
+          <a className="button button-primary" href={siteConfig.sharedInstagramUrl} target="_blank" rel="noopener noreferrer">
+            {t.social.cta} <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+      </section>
       </main>
 
       <footer className="site-footer">

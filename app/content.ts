@@ -14,6 +14,7 @@ export const japanLessonRates = [
 ];
 
 export const siteConfig = {
+  sharedInstagramUrl: "https://www.instagram.com/alcouplelife/",
   perisherLessonsUrl: "https://shop.perisher.com.au/perisher-private-lessons",
   brandName: "Ann&Lonny",
   defaultLocale: "zh" as Locale,
@@ -253,7 +254,7 @@ export const content = {
       addLink: "[ADD LINK]",
     },
     hero: {
-      eyebrow: "PERISHER, NSW · ACCENT, NISEKO HOKKAIDO",
+      eyebrow: "PERISHER, NSW · ACCENT, HOKKAIDO JAPAN",
       title: "Personalised Ski & Snowboard Lessons",
       subtitle:
         "Friendly, professional lessons designed around your goals, confidence and enjoyment.",
@@ -263,7 +264,7 @@ export const content = {
       eyebrow: "About us",
       title: "Learn with confidence. Enjoy every turn.",
       intro:
-        "We both graduated from the Department of Recreational Sports at National Pingtung University of Science and Technology, then worked together as fitness coaches in Taiwan. We love surfing together; today, we are full-time ski and snowboard instructors following winter between Perisher in Australia and Accent in Niseko, Japan.",
+        "We both graduated from the Department of Recreational Sports at National Pingtung University of Science and Technology, then worked together as fitness coaches in Taiwan. We love surfing together; today, we are full-time ski and snowboard instructors following winter between Perisher in Australia and ACCENT in Hokkaido, Japan.",
       photoLabel: "[LONNY & ANN PHOTO]",
       points: [
         {
@@ -276,7 +277,7 @@ export const content = {
         },
         {
           title: "Where we teach",
-          text: "Perisher, New South Wales in the Southern Hemisphere season, and with Accent in Niseko, Hokkaido during the Northern Hemisphere season.",
+          text: "Perisher, New South Wales in the Southern Hemisphere season, and with ACCENT in Hokkaido, Japan during the Northern Hemisphere season.",
         },
       ],
     },
@@ -354,7 +355,7 @@ export const content = {
       chooseRegion: "Choose your lesson location",
       regions: {
         japan: {
-          label: "Japan · Niseko · Accent",
+          label: "Japan · Hokkaido · ACCENT",
           steps: [
             {
               title: "Step 1 — Contact Us",
@@ -429,9 +430,9 @@ export const content = {
             "Yes. You are also welcome to book both of us for the same lesson, which can make the lesson more flexible. All arrangements remain subject to instructor availability.",
         },
         {
-          question: "Can you help take photos and videos?",
+          question: "Can I arrange a lesson if I am staying in HANAZONO?",
           answer:
-            "Yes. We can film your riding and use the footage to analyse your movements and suggest improvements. If you only want a riding video without coaching analysis, that is also possible.",
+            "Our current plan is to start lessons in Hirafu or Annupuri, then ski or snowboard over to HANAZONO, depending on your ability and the trails and lifts open that day. HANAZONO's official rules for the upcoming season have not yet been announced; we plan to check again in October 2026. Final arrangements remain subject to the official rules.",
         },
         {
           question: "What is the minimum age for lessons?",
@@ -441,7 +442,7 @@ export const content = {
         {
           question: "How many people can join one lesson?",
           answer:
-            "In Japan, each instructor teaches one group of up to 4 students. For Australian group arrangements, please contact us to discuss the details. If students have different ability levels, the lesson pace and terrain will be based on the least experienced student for safety.",
+            "In Japan, each instructor teaches one group of up to 4 students; in Australia, private lessons accommodate up to 5 students per instructor. If students have different ability levels, the lesson pace and terrain will be based on the least experienced student for safety.",
         },
         {
           question: "How is the lesson price confirmed?",
@@ -477,6 +478,12 @@ export const content = {
       },
       prefillLabel: "Suggested message",
       linkPlaceholder: "Add this contact link in app/content.ts",
+    },
+    social: {
+      eyebrow: "Our snow-season life",
+      title: "Follow winter with Ann & Lonny",
+      description: "We share our teaching days at Perisher, Australia. When the Japan snow season begins, we will also share our skiing, snowboarding and everyday life in Japan.",
+      cta: "Follow us on Instagram",
     },
     footer: {
       tagline: "Ski & snowboard lessons in English and Chinese.",
@@ -553,7 +560,7 @@ export const content = {
       addLink: "[加入連結]",
     },
     hero: {
-      eyebrow: "澳洲新州PERISHER · 日本北海道二世谷ACCENT",
+      eyebrow: "澳洲新州 PERISHER · 日本北海道 ACCENT",
       title: "專屬於你的雙板與單板課程",
       subtitle:
         "根據你的程度與目標，提供安全、友善並且有趣的雪上學習體驗。",
@@ -563,7 +570,7 @@ export const content = {
       eyebrow: "關於我們",
       title: "建立信心，享受每一個轉彎。",
       intro:
-        "我們都是屏東科技大學休閒運動系的校友，畢業後曾在台灣一起擔任健身教練。我們喜歡一起衝浪；現在，我們成為往返澳洲 Perisher 與日本二世谷 Accent 的全職雙板與單板教練。",
+        "我們都是屏東科技大學休閒運動系的校友，畢業後曾在台灣一起擔任健身教練。我們喜歡一起衝浪；現在，我們成為往返澳洲 Perisher 與日本北海道 ACCENT 的全職雙板與單板教練。",
       photoLabel: "[LONNY 與 ANN 合照]",
       points: [
         {
@@ -576,7 +583,7 @@ export const content = {
         },
         {
           title: "我們在哪裡教學",
-          text: "南半球雪季在澳洲新州 Perisher，北半球雪季在日本北海道二世谷 Accent。",
+          text: "南半球雪季在澳洲新州 Perisher，北半球雪季在日本北海道 ACCENT。",
         },
       ],
     },
@@ -651,7 +658,7 @@ export const content = {
       chooseRegion: "選擇上課地點",
       regions: {
         japan: {
-          label: "日本 · 北海道二世谷 · Accent",
+          label: "日本 · 北海道 · ACCENT",
           steps: [
             {
               title: "Step 1 — 聯絡詢問",
@@ -725,9 +732,9 @@ export const content = {
             "可以。也歡迎同時預約我們兩位一起上課，雙教練安排能讓課程更加彈性、自由；實際安排仍需依教練時間確認。",
         },
         {
-          question: "可以幫忙拍影片和照片嗎？",
+          question: "住在 HANAZONO，可以安排課程嗎？",
           answer:
-            "可以。我們能協助拍攝滑行影片與照片，也能使用影片分析動作並提供改善方向；如果單純只想拍攝滑行紀錄，也可以事先提出。",
+            "目前規劃需從 Hirafu 或 Annupuri 開始上課，再依學生程度及當天雪道、纜車開放情況，滑行前往 HANAZONO。HANAZONO 本雪季的官方規定尚未公布，預計於 2026 年 10 月多再次確認，最終安排以官方規定為準。",
         },
         {
           question: "最小幾歲能開始上課？",
@@ -737,7 +744,7 @@ export const content = {
         {
           question: "最多幾人能一起上課？",
           answer:
-            "日本課程每位教練帶一組，最多 4 人；澳洲的團體安排請先向我們詢問。如果學生程度不同，基於安全考量，課程節奏與地形會以程度較慢的學生為主。",
+            "日本課程每位教練帶一組，最多 4 人；澳洲私人教練課每位教練最多帶 5 人。如果學生程度不同，基於安全考量，課程節奏與地形會以程度較慢的學生為主。",
         },
         {
           question: "課程價格如何確認？",
@@ -773,6 +780,12 @@ export const content = {
       },
       prefillLabel: "預填訊息",
       linkPlaceholder: "請在 app/content.ts 加入聯絡連結",
+    },
+    social: {
+      eyebrow: "我們的雪季日常",
+      title: "跟著 Ann ＆ Lonny 一起過雪季",
+      description: "分享我們在澳洲 Perisher 的教學日常，日本雪季開始後，也會記錄我們在日本的滑雪生活。",
+      cta: "追蹤我們的 Instagram",
     },
     footer: {
       tagline: "中英文雙板與單板課程。",

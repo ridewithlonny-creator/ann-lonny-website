@@ -58,6 +58,11 @@ test("server-renders the Ann&Lonny website and launch metadata", async () => {
   assert.doesNotMatch(html, /雪票和裝備是否包含/i);
   assert.match(html, /依照當天開放的地形、纜車與雪況/i);
   assert.match(html, /不用擔心天氣不好就學不到東西/i);
+  assert.match(html, /雙板課程從 4 歲開始，單板課程從 7 歲開始/);
+  assert.match(html, /6 歲以下的孩子建議安排 1 對 1 教學/);
+  assert.match(html, /6 歲以下兒童建議安排 1 對 1 教學/);
+  assert.doesNotMatch(html, /6 歲以下兒童僅安排/);
+  assert.match(html, /src="\/assets\/images\/ann-lonny-about-2026\.jpg"/);
 
   for (const id of ["top", "about", "lessons", "instructors", "booking", "faq", "contact"]) {
     assert.match(html, new RegExp(`<section id="${id}"`, "i"));
@@ -84,6 +89,22 @@ test("server-renders the Ann&Lonny website and launch metadata", async () => {
   assert.doesNotMatch(html, /PRIVACY NOTICE PLACEHOLDER|隱私權聲明 PLACEHOLDER/i);
   assert.doesNotMatch(html, /TESTIMONIAL PLACEHOLDER|學生評價 PLACEHOLDER|placeholder-badge/i);
   assert.doesNotMatch(html, /codex-preview|Your site is taking shape|Building your site/i);
+});
+
+test("sections follow the agreed reading order and pricing defaults to Japan", async () => {
+  const html = await (await render()).text();
+  const order = ["top", "about", "lessons", "instructors", "why", "testimonials", "booking", "pricing", "faq", "contact"];
+  let previous = -1;
+  for (const id of order) {
+    const position = html.indexOf(`<section id="${id}"`);
+    assert.ok(position > previous, `${id} should exist after the preceding section`);
+    previous = position;
+  }
+  assert.match(html, /aria-label="選擇課程價格地區"/);
+  assert.match(html, /aria-pressed="true" aria-controls="pricing-region-panel">日本<\/button>/);
+  assert.match(html, /aria-pressed="false" aria-controls="pricing-region-panel">澳洲 · Perisher<\/button>/);
+  assert.match(html, /110,000/);
+  assert.match(html, /130,000/);
 });
 
 test("published testimonials contain no placeholder source", async () => {

@@ -4,9 +4,9 @@
 
 ## 核對基準
 
-- 最後核對日期：2026 年 8 月 16 日。
+- 最後核對日期：2026 年 9 月 19 日。
 - 核對範圍：目前儲存庫內的程式碼、設定、文件、測試與 `public/` 圖片資產。
-- 核對時的程式版本：`main` 分支，提交 `fb69522`（`Publish testimonials and teaching updates`），另有本次部署紀錄的 working tree changes。
+- 核對時的程式版本：`main` 分支，提交 `61e8efa`（`Add Ann family lesson introduction`），另有既有部署紀錄、課程價格與區塊排序的 working tree changes。
 - 本摘要只記錄儲存庫中已存在或既有文件已明確列出的內容，不代表尚未寫入儲存庫的口頭決定。
 
 ## 1. Project overview
@@ -46,7 +46,9 @@ Ann&Lonny 是一個繁體中文／英文雙語的單頁式個人品牌網站，�
 ### 部署狀態
 
 - 對外使用的 Vercel 正式網站：<https://ann-lonny-website.vercel.app/>；此網址必須保留，既有學生不需要更換連結。
+- 2026 年 8 月 16 日已將提交 `61e8efa` 成功發布至同一個 Vercel 正式網址，包含 Ann 的親子滑雪簡介更新。
 - OpenAI Sites 專案只保留作內部用途，已恢復為僅限擁有者存取，不作為對外網站。
+- 2026 年 9 月 18–19 日的價格表、澳洲訂課流程、兒童年齡說明、區塊排序與 About 合照修改目前為本機版本，尚未部署。
 
 ## 3. Brand identity
 
@@ -75,8 +77,14 @@ Ann&Lonny 是一個繁體中文／英文雙語的單頁式個人品牌網站，�
 
 ### 內容與版面
 
-- 單頁式 Landing Page，包含 Header、Hero、About、Lessons、Instructors、Why Learn With Us、Booking Process、FAQ、Contact 與 Footer。
+- 單頁式 Landing Page，依序為 Header、Hero、About、Lessons、Instructors、Why Learn With Us、Testimonials、Booking Process、Pricing、FAQ、Contact 與 Footer；既有導覽項目同步排序。
+- 閱讀順序先呈現背景、教學專業與學生回饋，再呈現訂課流程與價格，讓客人先理解教學價值；保留課程區的價格捷徑供已有需求的客人直達。
 - 6 種課程卡片：雙板、單板、兒童、成人、家庭、雪山探索與滑行紀錄。
+- 訂課流程後設有中英文課程價格區，導覽列與課程區皆可直達；日本為預設第一選項，澳洲為第二選項，且不影響訂課流程的地區選擇。
+- 日本選項保留全日價目表與詢問空檔入口；澳洲選項不列固定金額，簡要提醒先至 Perisher 官網查價，再聯絡確認上課時間與指定教練姓名後訂課；完整流程放在訂課流程區。
+- 日本課程從 Hirafu／Annupuri 開始為每組 110,000 日圓，留壽都 Rusutsu 開始為每組 130,000 日圓；皆含稅、旺季同價，每位教練帶一組最多 4 人，6 歲以下建議一對一而非強制限制。
+- FAQ 明確說明雙板從 4 歲、單板從 7 歲開始；6 歲以下建議 1 對 1 教學，中英文及價目表提醒保持一致。
+- 日本全日課包含 5 小時教學＋1 小時用餐，目前無半日課；雪票、雪具租借、餐飲與交通另計，FAQ 的人數與價格說明已同步更新。
 - 2 張教練卡片，包含照片、主教項目、語言、證照與簡介。
 - Ann 的中英文簡介說明滑雪雖屬極限運動，但掌握合適的安全範圍與速度後，也能成為全家共同體驗的活動，並強調以安全、簡單的方式帶領家庭享受滑雪。
 - 「我們是誰」中英文文案說明兩位都是 APSI 單板三級教練，並能清楚解釋動作、技術與背後理論。
@@ -165,7 +173,7 @@ Ann&Lonny 是一個繁體中文／英文雙語的單頁式個人品牌網站，�
 ### 正式頁面目前引用的圖片
 
 - Hero：`ann-lonny-hero-mobile.webp`、`ann-lonny-hero.webp`。
-- About：`ann-lonny-about.webp`。
+- About：`ann-lonny-about-2026.jpg`，使用 Lonny 提供的 APSI 背心雙人合照，以靠下的顯示位置與輕微放大減少天空留白；原始照片與舊圖均保留。
 - 課程：`course-ski.webp`、`course-snowboard.webp`、`course-kids.webp`、`course-adults.webp`、`course-family.webp`、`snowboard-adventure.webp`。
 - 教練：`lonny-profile-2026.webp`、`ann-profile-2026.webp`。
 - 聯絡：Lonny／Ann 的 LINE 與 WeChat QR Code。
@@ -175,7 +183,7 @@ Ann&Lonny 是一個繁體中文／英文雙語的單頁式個人品牌網站，�
 
 ### 日本｜北海道二世谷 Accent
 
-1. 客人先聯絡詢問，提供日期、人數與雙板／單板需求。
+1. 客人先查看依上課起點區分的價格表，再聯絡詢問日期、上課起點、人數與雙板／單板需求。
 2. Ann／Lonny 確認價格與教練時間。
 3. 確認基本安排後，傳送 Google Form 訂課表單。
 4. Accent 依確認內容寄送 Invoice，客人透過學校完成付款。
@@ -185,13 +193,13 @@ Ann&Lonny 是一個繁體中文／英文雙語的單頁式個人品牌網站，�
 
 ### 澳洲｜新州 Perisher
 
-1. 客人先與 Ann／Lonny 討論預計日期與時段，確認教練能否配合。
-2. 客人到 Perisher 官網查看當時價格。
-3. 客人在 Perisher 官網訂課，並在指定欄位填入教練姓名。
+1. 客人先到 Perisher 官網查看當時價格。
+2. 客人與 Ann／Lonny 確認上課日期及時間，並取得指定教練姓名。
+3. 客人在 Perisher 官網訂課，並在指定教練欄位填入 Ann／Lonny 提供的姓名。
 4. 完成官網付款後，把收據截圖傳給 Ann／Lonny。
-5. Ann／Lonny 向主管確認；課程進入官方工作課表並收到確認後，才算訂課成功。
+5. Ann／Lonny 向主管確認課程已排入官方工作課表，再私訊通知客人訂課成功。
 
-網站提醒：在 Perisher 官網完成付款仍不能保證指定教練，必須等待官方工作課表確認。
+網站提醒：訂課前先確認時間並取得教練姓名；付款後回傳收據，等待 Ann／Lonny 私訊確認訂課成功。
 
 ## 8. Design principles
 
@@ -212,7 +220,7 @@ Ann&Lonny 是一個繁體中文／英文雙語的單頁式個人品牌網站，�
 以下項目已由目前儲存庫內容明確指出尚待處理或確認：
 
 - 只應公開已取得同意的學生照片與影片。
-- 正式營運前需再次確認日本與澳洲的最新價格、付款、取消、天氣與保險政策；目前 FAQ 已包含價格與基本規則文字。
+- 日本課程價格與費用範圍已於 2026 年 9 月 18 日由 Lonny 確認；澳洲價格依 Perisher 官網，付款、取消、天氣與保險政策仍需隨營運情況核對。
 - 隱私權聲明應隨聯絡平台、表單、付款或第三方服務變更而同步更新；README 建議依實際營運地區交由專業人士再次審閱。
 
 ## 10. Known issues

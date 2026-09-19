@@ -7,7 +7,14 @@ export type Locale = "en" | "zh";
 
 type LocalizedText = Record<Locale, string>;
 
+// Tax-inclusive full-day rates per group, with one instructor.
+export const japanLessonRates = [
+  { id: "niseko", location: { en: "Hirafu / Annupuri", zh: "Hirafu／Annupuri" }, amount: "110,000" },
+  { id: "rusutsu", location: { en: "Rusutsu", zh: "留壽都 Rusutsu" }, amount: "130,000" },
+];
+
 export const siteConfig = {
+  perisherLessonsUrl: "https://shop.perisher.com.au/perisher-private-lessons",
   brandName: "Ann&Lonny",
   defaultLocale: "zh" as Locale,
   features: {
@@ -234,6 +241,7 @@ export const content = {
       language: "Choose language",
       about: "About",
       lessons: "Lessons",
+      pricing: "Pricing",
       instructors: "Instructors",
       booking: "Booking Process",
       faq: "FAQ",
@@ -277,7 +285,36 @@ export const content = {
       title: "A lesson built around you.",
       intro:
         "Lessons for families, children and students who want to explore more runs and terrain. Final details are confirmed after you contact us.",
-      noPrice: "To confirm lesson details, contact us directly using one of the options below.",
+      pricingLink: "View lesson prices",
+    },
+    pricing: {
+      eyebrow: "Lesson pricing",
+      chooseRegion: "Choose lesson pricing region",
+      regions: { japan: "Japan", australia: "Australia · Perisher" },
+      title: "Plan your day on snow.",
+      intro: "Explore our lesson prices, then get in touch to arrange the right experience for you.",
+      caption: "Japan full-day ski & snowboard lessons",
+      locationHeading: "Starting location",
+      priceHeading: "Full day · per group, tax included",
+      currency: "JPY",
+      groupNote: "The price is for your whole group, not per person.",
+      details: [
+        { label: "Your group", value: "1 instructor · up to 4 students" },
+        { label: "Your day", value: "5 hours of teaching + 1-hour meal break" },
+        { label: "Seasonal pricing", value: "Same price during peak season" },
+      ],
+      exclusionsTitle: "Additional expenses",
+      exclusions: "Lift passes, equipment rental, meals and transport are not included and must be paid separately.",
+      fullDayNote: "Full-day lessons only; half-day lessons are not currently available.",
+      childrenNote: "One-to-one lessons are recommended for children aged 6 and under, as outlined in our FAQ.",
+      cta: "Ask about dates & instructor availability",
+      bookingNote: "Share your dates, starting location, group size and ski or snowboard preference. Lessons are subject to instructor availability.",
+      australia: {
+        title: "Australia · Perisher lesson prices",
+        description: "Prices vary by lesson time and booking date. Check the latest price on the Perisher website, then contact us to confirm the lesson time and obtain the instructor name to request before booking.",
+        contact: "Confirm lesson time & instructor name",
+        link: "Check prices on the Perisher website",
+      },
     },
     instructors: {
       eyebrow: "Meet your instructors",
@@ -347,12 +384,12 @@ export const content = {
           label: "Australia · Perisher",
           steps: [
             {
-              title: "Step 1 — Confirm the Lesson Time With Us",
-              text: "Contact us first to discuss your preferred date and lesson time, and confirm whether the instructor is available.",
+              title: "Step 1 — Check the Official Perisher Price",
+              text: "Check the current lesson price on the official Perisher website. Prices vary by lesson time and booking date.",
             },
             {
-              title: "Step 2 — Check the Official Perisher Price",
-              text: "After agreeing on a suitable time with us, review the current lesson price on the official Perisher website.",
+              title: "Step 2 — Confirm the Time and Instructor Name",
+              text: "After checking the price, contact us to confirm your lesson date and time and obtain the instructor name to enter when booking.",
             },
             {
               title: "Step 3 — Book Through the Perisher Website",
@@ -363,12 +400,12 @@ export const content = {
               text: "After paying on the official website, send us a screenshot of your booking receipt.",
             },
             {
-              title: "Step 5 — Wait for Schedule Confirmation",
-              text: "We will confirm the lesson with our supervisor. The booking is complete once it appears on our official work schedule and you receive our confirmation.",
+              title: "Step 5 — Receive Our Booking Confirmation",
+              text: "We will check with our supervisor that the lesson has been added to our official work schedule, then send you a private message confirming your booking.",
             },
           ],
           alert:
-            "Payment on the Perisher website alone does not guarantee the requested instructor. Please send the receipt and wait until the lesson appears on our official schedule.",
+            "Before booking, confirm the lesson time with us and obtain the instructor name to request. After payment, send us your receipt and wait for our private booking confirmation.",
         },
       },
     },
@@ -399,17 +436,17 @@ export const content = {
         {
           question: "What is the minimum age for lessons?",
           answer:
-            "We recommend starting ski lessons from age 3 and snowboard lessons from age 6. Children under 6 can only be booked in a one-to-one lesson.",
+            "Ski lessons start from age 4 and snowboard lessons from age 7. For children aged 6 and under, we recommend one-to-one lessons so the instructor can adapt to their energy, attention span and learning pace.",
         },
         {
           question: "How many people can join one lesson?",
           answer:
-            "Up to 4 people can join one lesson. Larger groups require an additional fee, so please contact us to discuss the details. If students have different ability levels, the lesson pace and terrain will be based on the least experienced student for safety.",
+            "In Japan, each instructor teaches one group of up to 4 students. For Australian group arrangements, please contact us to discuss the details. If students have different ability levels, the lesson pace and terrain will be based on the least experienced student for safety.",
         },
         {
           question: "How is the lesson price confirmed?",
           answer:
-            "For Australia, please check the current price on the official Perisher website, as prices vary by lesson time and booking date. In Japan, a full-day lesson includes 5 teaching hours plus a 1-hour meal break and is generally JPY 110,000. Peak-season pricing may vary, so please ask us to confirm before booking.",
+            `In Japan, a full-day lesson starting in Hirafu or Annupuri costs JPY ${japanLessonRates[0].amount}; a lesson starting in Rusutsu costs JPY ${japanLessonRates[1].amount}. Prices include tax and cover one instructor for a group of up to 4 students, not a per-person fee. The day includes 5 teaching hours and a 1-hour meal break. Peak-season prices are the same; half-day lessons are not currently available. Lift passes, equipment rental, meals and transport are extra. For Australia, please check the current price on the official Perisher website, as prices vary by lesson time and booking date.`,
         },
         {
           question: "Why do our lessons in Japan cost more than some other instructors?",
@@ -504,6 +541,7 @@ export const content = {
       language: "選擇語言",
       about: "關於我們",
       lessons: "課程介紹",
+      pricing: "價格",
       instructors: "教練介紹",
       booking: "訂課流程",
       faq: "常見問題",
@@ -546,7 +584,36 @@ export const content = {
       eyebrow: "課程介紹",
       title: "根據你的需要安排課程。",
       intro: "適合家庭、兒童，以及想探索更多雪道與地形的學生；實際內容與時間會在聯絡後確認。",
-      noPrice: "想進一步確認課程細節，請透過下方聯絡方式與我們討論。",
+      pricingLink: "查看課程價格",
+    },
+    pricing: {
+      eyebrow: "課程價格",
+      chooseRegion: "選擇課程價格地區",
+      regions: { japan: "日本", australia: "澳洲 · Perisher" },
+      title: "先了解費用，再安排雪上時光。",
+      intro: "先了解課程費用，再一起安排適合你的滑雪體驗。",
+      caption: "日本全日雙板與單板課程",
+      locationHeading: "上課起點",
+      priceHeading: "全日課費用（含稅／每組）",
+      currency: "日圓",
+      groupNote: "以上為整組費用，不是每人費用。",
+      details: [
+        { label: "上課人數", value: "每組 1 位教練，最多 4 人" },
+        { label: "課程時間", value: "5 小時教學＋1 小時用餐" },
+        { label: "旺季收費", value: "旺季價格相同" },
+      ],
+      exclusionsTitle: "需另外支付的費用",
+      exclusions: "雪票、雪具租借、餐飲與交通不包含在課程費用內，需另外支付。",
+      fullDayNote: "目前僅提供全日課，不提供半日課。",
+      childrenNote: "依常見問題中的兒童課程建議，6 歲以下兒童建議安排 1 對 1 教學。",
+      cta: "詢問日期與教練空檔",
+      bookingNote: "告訴我們你的日期、上課起點、人數與雙板或單板需求；實際安排依教練空檔確認。",
+      australia: {
+        title: "澳洲 · Perisher 課程價格",
+        description: "價格依上課時段與訂課日期浮動，請至 Perisher 官網查看最新價格。確認價格後，請先聯絡我們確認上課時間與指定教練姓名，再進行訂課。",
+        contact: "確認上課時間與教練姓名",
+        link: "前往 Perisher 官網查看價格",
+      },
     },
     instructors: {
       eyebrow: "教練介紹",
@@ -614,12 +681,12 @@ export const content = {
           label: "澳洲 · 新州 Perisher",
           steps: [
             {
-              title: "Step 1 — 先與我們確認上課時間",
-              text: "先聯絡我們討論預計日期、上課時段，確認教練是否能配合。",
+              title: "Step 1 — 查看 Perisher 官網價格",
+              text: "請先至 Perisher 官網查看目前的課程價格，價格會依上課時段與訂課日期浮動。",
             },
             {
-              title: "Step 2 — 查看 Perisher 官網價格",
-              text: "確認合適的上課時間後，請前往 Perisher 官方網站查看目前的課程價格。",
+              title: "Step 2 — 確認時間與指定教練姓名",
+              text: "確認價格後，請與我們確認上課日期及時間，並取得訂課時要填寫的指定教練姓名。",
             },
             {
               title: "Step 3 — 透過 Perisher 官網訂課",
@@ -630,12 +697,12 @@ export const content = {
               text: "完成官網付款後，請將訂課收據截圖傳給我們。",
             },
             {
-              title: "Step 5 — 等待官方課表確認",
-              text: "我們會向主管確認；課程進入我們的官方工作課表並收到確認後，才算訂課成功。",
+              title: "Step 5 — 收到訂課成功通知",
+              text: "我們會向主管確認課程已排入官方工作課表，再私訊通知你訂課成功。",
             },
           ],
           alert:
-            "只在 Perisher 官網完成付款，還不能保證指定教練。請傳送收據，並等待課程進入我們的官方工作課表。",
+            "訂課前請先與我們確認上課時間，並取得指定教練姓名。付款後請回傳收據，等待我們私訊通知訂課成功。",
         },
       },
     },
@@ -665,17 +732,17 @@ export const content = {
         {
           question: "最小幾歲能開始上課？",
           answer:
-            "雙板課程建議從 3 歲開始，單板課程建議從 6 歲開始；6 歲以下兒童僅安排 1 對 1 課程。",
+            "雙板課程從 4 歲開始，單板課程從 7 歲開始。6 歲以下的孩子建議安排 1 對 1 教學，讓教練能依孩子的體力、專注力與學習步調調整課程。",
         },
         {
           question: "最多幾人能一起上課？",
           answer:
-            "最多 4 人。若超過 4 人，需要收取額外費用，詳細安排歡迎先向我們詢問。如果學生程度不同，基於安全考量，課程節奏與地形會以程度較慢的學生為主。",
+            "日本課程每位教練帶一組，最多 4 人；澳洲的團體安排請先向我們詢問。如果學生程度不同，基於安全考量，課程節奏與地形會以程度較慢的學生為主。",
         },
         {
           question: "課程價格如何確認？",
           answer:
-            "澳洲雪季請以 Perisher 官方網站的即時價格為準，價格會依上課時段與訂課日期變動。日本雪季的全日課程為 5 小時教學＋1 小時用餐時間，一般價格為 110,000 日圓；旺季價格可能調整，訂課前請先向我們詢問確認。",
+            `日本全日課從 Hirafu 或 Annupuri 開始為 ${japanLessonRates[0].amount} 日圓，從留壽都 Rusutsu 開始為 ${japanLessonRates[1].amount} 日圓，皆已含稅。費用為每位教練帶一組、最多 4 人的整組價格，不是每人費用。全日安排為 5 小時教學＋1 小時用餐，旺季價格相同，目前不提供半日課。雪票、雪具租借、餐飲與交通需另外支付。澳洲課程請以 Perisher 官方網站的即時價格為準，價格會依上課時段與訂課日期變動。`,
         },
         {
           question: "為什麼我們在日本的課程價格比一般教練高？",

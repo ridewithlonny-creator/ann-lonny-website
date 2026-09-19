@@ -2,11 +2,13 @@
 
 /* eslint-disable @next/next/no-img-element -- Local WebP assets are already responsive and avoid the unavailable preview image service. */
 import { useEffect, useMemo, useState } from "react";
+import Image from "next/image";
 import {
   Locale,
   contactPlatforms,
   content,
   instructors,
+  japanLessonRates,
   lessons,
   siteConfig,
   testimonials,
@@ -35,6 +37,7 @@ export default function Home() {
   const [locale, setLocale] = useState<Locale>(siteConfig.defaultLocale);
   const [menuOpen, setMenuOpen] = useState(false);
   const [bookingRegion, setBookingRegion] = useState<"japan" | "australia">("japan");
+  const [pricingRegion, setPricingRegion] = useState<"japan" | "australia">("japan");
   const t = content[locale];
   const activeBooking = t.booking.regions[bookingRegion];
 
@@ -76,6 +79,7 @@ export default function Home() {
       { href: "#lessons", label: t.nav.lessons },
       { href: "#instructors", label: t.nav.instructors },
       { href: "#booking", label: t.nav.booking },
+      { href: "#pricing", label: t.nav.pricing },
       { href: "#faq", label: t.nav.faq },
       { href: "#contact", label: t.nav.contact },
     ],
@@ -184,12 +188,13 @@ export default function Home() {
             </div>
           </div>
           <div className="portrait-photo" data-reveal>
-            <img
-              src="/assets/images/ann-lonny-about.webp"
-              alt={locale === "zh" ? "Lonny 與 Ann 在雪山上的合照" : "Lonny and Ann together on the mountain"}
+            <Image
+              src="/assets/images/ann-lonny-about-2026.jpg"
+              alt={locale === "zh" ? "Lonny 與 Ann 穿著藍色 APSI 號碼背心、手持雙板在雪場的合照" : "Lonny and Ann in blue APSI bibs, holding skis together at the ski area"}
+              unoptimized
               loading="lazy"
-              width={1200}
-              height={1500}
+              width={1108}
+              height={1477}
             />
           </div>
         </div>
@@ -225,7 +230,7 @@ export default function Home() {
               </article>
             ))}
           </div>
-          <p className="policy-note">{t.lessons.noPrice}</p>
+          <p className="policy-note"><a className="pricing-jump" href="#pricing">{t.lessons.pricingLink} <span aria-hidden="true">↓</span></a></p>
         </div>
       </section>
 
@@ -272,7 +277,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section why-section">
+      <section id="why" className="section why-section">
         <div className="container">
           <div className="section-heading compact" data-reveal>
             <div>
@@ -291,6 +296,32 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {siteConfig.features.testimonials && (
+        <section id="testimonials" className="section testimonials-section">
+          <div className="container">
+            <div className="section-heading compact" data-reveal>
+              <div>
+                <p className="eyebrow">{t.testimonials.eyebrow}</p>
+                <h2>{t.testimonials.title}</h2>
+              </div>
+            </div>
+            <div className="testimonial-grid">
+              {testimonials.map((testimonial) => (
+                <blockquote key={testimonial.id} data-reveal>
+                  <p>“{testimonial.quote}”</p>
+                  <footer>
+                    <strong>{testimonial.name}</strong>
+                    <span>
+                      {testimonial.lesson[locale]} · {testimonial.region[locale]}
+                    </span>
+                  </footer>
+                </blockquote>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       <section id="booking" className="section booking-section">
         <div className="container">
@@ -342,31 +373,86 @@ export default function Home() {
         </div>
       </section>
 
-      {siteConfig.features.testimonials && (
-        <section className="section testimonials-section">
-          <div className="container">
-            <div className="section-heading compact" data-reveal>
-              <div>
-                <p className="eyebrow">{t.testimonials.eyebrow}</p>
-                <h2>{t.testimonials.title}</h2>
-              </div>
+      <section id="pricing" className="section pricing-section" aria-labelledby="pricing-title">
+        <div className="container">
+          <div className="section-heading">
+            <div>
+              <p className="eyebrow">{t.pricing.eyebrow}</p>
+              <h2 id="pricing-title">{t.pricing.title}</h2>
             </div>
-            <div className="testimonial-grid">
-              {testimonials.map((testimonial) => (
-                <blockquote key={testimonial.id} data-reveal>
-                  <p>“{testimonial.quote}”</p>
-                  <footer>
-                    <strong>{testimonial.name}</strong>
-                    <span>
-                      {testimonial.lesson[locale]} · {testimonial.region[locale]}
-                    </span>
-                  </footer>
-                </blockquote>
-              ))}
-            </div>
+            <p>{t.pricing.intro}</p>
           </div>
-        </section>
-      )}
+          <div className="booking-region-switcher pricing-region-switcher" role="group" aria-label={t.pricing.chooseRegion}>
+            {(["japan", "australia"] as const).map((region) => (
+              <button
+                key={region}
+                type="button"
+                className={pricingRegion === region ? "is-active" : ""}
+                aria-pressed={pricingRegion === region}
+                aria-controls="pricing-region-panel"
+                onClick={() => setPricingRegion(region)}
+              >
+                {t.pricing.regions[region]}
+              </button>
+            ))}
+          </div>
+          <div id="pricing-region-panel" aria-live="polite">
+            {pricingRegion === "japan" ? (
+                <div className="pricing-panel">
+                  <table className="pricing-table" aria-describedby="pricing-group-note">
+                    <caption>{t.pricing.caption}</caption>
+                    <thead>
+                      <tr>
+                        <th scope="col">{t.pricing.locationHeading}</th>
+                        <th scope="col">{t.pricing.priceHeading}</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {japanLessonRates.map((rate) => (
+                        <tr key={rate.id}>
+                          <th scope="row">{rate.location[locale]}</th>
+                          <td><strong>{rate.amount}</strong> <span>{t.pricing.currency}</span></td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                  <p className="pricing-group-note" id="pricing-group-note">{t.pricing.groupNote}</p>
+                  <dl className="pricing-details">
+                    {t.pricing.details.map((detail) => (
+                      <div key={detail.label}>
+                        <dt>{detail.label}</dt>
+                        <dd>{detail.value}</dd>
+                      </div>
+                    ))}
+                  </dl>
+                  <div className="pricing-notes">
+                    <h3>{t.pricing.exclusionsTitle}</h3>
+                    <p>{t.pricing.exclusions}</p>
+                    <p>{t.pricing.fullDayNote}</p>
+                    <p>{t.pricing.childrenNote}</p>
+                  </div>
+                  <div className="pricing-action">
+                    <a className="button button-primary" href="#contact">{t.pricing.cta}</a>
+                    <p>{t.pricing.bookingNote}</p>
+                  </div>
+                </div>
+            ) : (
+              <div className="pricing-panel">
+                <div className="pricing-notes">
+                  <h3>{t.pricing.australia.title}</h3>
+                  <p>{t.pricing.australia.description}</p>
+                </div>
+                <div className="pricing-action">
+                  <a className="button button-primary" href={siteConfig.perisherLessonsUrl} target="_blank" rel="noreferrer">
+                    {t.pricing.australia.link} <span aria-hidden="true">↗</span>
+                  </a>
+                  <a className="pricing-jump" href="#contact">{t.pricing.australia.contact}</a>
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
+      </section>
 
       <section id="faq" className="section faq-section">
         <div className="container faq-layout">

@@ -8,6 +8,8 @@
 
 ### Deployment
 
+- 經使用者同意，以 `f2c4208` 將 FAQ 排序與預設展開、Hanazono 大小寫、雪場中文名稱及教練資格說明發布至原 Vercel 網址，平台回報 success。
+- 更新 `PROJECT_SUMMARY.md` 的最新發布版本與狀態；正式畫面尚未完成瀏覽器驗證。
 - 經使用者同意，以 `5f08139` 將北海道標示、FAQ 與共同 Instagram 區塊發布至原 Vercel 網址，平台回報 success；線上瀏覽器驗證受自動審核限制尚未完成。
 - 更新 `PROJECT_SUMMARY.md` 的最新發布版本及線上驗證限制，並同步本紀錄。
 - 經使用者同意將原始碼與照片上傳指定公開 GitHub 儲存庫，以提交 `70cf0a1` 成功發布至原 Vercel 網址，並確認正式內容及中英文切換。

@@ -5,9 +5,9 @@
 ## 核對基準
 
 - 最後核對日期：2026 年 9 月 19 日。
-- 本次 working tree changes：北海道 ACCENT 地區標示、HANAZONO 與澳洲人數 FAQ、共同 Instagram 區塊已完成本機驗證，尚未提交或發布；以下目前功能包含這些本機修改。
+- 本次發布：北海道 ACCENT 地區標示、HANAZONO 與澳洲人數 FAQ、共同 Instagram 區塊已以 `5f08139` 發布，Vercel 回報 success；正式網站的瀏覽器檢查受自動審核限制，尚未完成，不能視為已驗證線上畫面。
 - 核對範圍：目前儲存庫內的程式碼、設定、文件、測試與 `public/` 圖片資產。
-- 核對時的正式程式版本：遠端 `main` 的 `70cf0a1`（`Publish lesson pricing, booking updates and new about photo`）；透過 GitHub 連線發布。本機 HEAD 仍為 `61e8efa`，工作目錄保留已發布修改，下次 Git 操作前須先同步遠端，避免覆蓋新提交。
+- 核對時的正式程式版本：遠端 `main` 的 `5f08139`（`Update Hokkaido FAQs and add shared Instagram section`）；透過 GitHub 連線發布。本機 HEAD 仍為 `61e8efa`，工作目錄保留已發布修改，下次 Git 操作前須先同步遠端，避免覆蓋新提交。
 - 本摘要只記錄儲存庫中已存在或既有文件已明確列出的內容，不代表尚未寫入儲存庫的口頭決定。
 
 ## 1. Project overview

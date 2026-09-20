@@ -108,6 +108,28 @@ test("sections follow the agreed reading order and pricing defaults to Japan", a
   assert.match(html, /130,000/);
 });
 
+test("Japan booking requires full payment verification and a private confirmation", async () => {
+  const html = await (await render()).text();
+  const booking = html.match(/<section id="booking"[\s\S]*?<\/section>/)?.[0];
+  assert.ok(booking, "Booking section should render");
+  const titles = ["查看課程價格", "聯絡確認課程安排", "填寫預約表單", "收到 Invoice 並付款", "收到訂課確認"];
+  let previous = -1;
+  for (const [index, title] of titles.entries()) {
+    const position = booking.indexOf(`Step ${index + 1} — ${title}`);
+    assert.ok(position > previous, `${title} should appear in the agreed order`);
+    previous = position;
+  }
+  assert.match(booking, /Accent 寄送 Invoice/);
+  assert.match(booking, /帳單指定期限內完成付款/);
+  assert.match(booking, /我們核實收到全額款項後，會透過私訊確認，完成訂課/);
+  assert.doesNotMatch(booking, /完成付款後，課程才會正式成立/);
+
+  const source = await readFile(new URL("app/content.ts", projectRoot), "utf8");
+  assert.match(source, /Step 1 — Check Lesson Prices/);
+  assert.match(source, /Accent will send your invoice/);
+  assert.match(source, /After we verify receipt of full payment, we will confirm your booking by private message/);
+});
+
 test("Hokkaido, Hanazono FAQ, group limits and shared Instagram render correctly", async () => {
   const html = await (await render()).text();
   assert.match(html, /日本北海道 ACCENT/);

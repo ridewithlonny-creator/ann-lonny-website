@@ -358,28 +358,28 @@ export const content = {
           label: "Japan · Hokkaido · ACCENT",
           steps: [
             {
-              title: "Step 1 — Contact Us",
-              text: "Tell us your preferred dates, number of students, and whether you are interested in ski or snowboard lessons.",
+              title: "Step 1 — Check Lesson Prices",
+              text: "Start by reviewing the lesson fees and what is included.",
             },
             {
-              title: "Step 2 — Confirm Price and Instructor Time",
-              text: "We will confirm the lesson price and whether a suitable instructor time is available.",
+              title: "Step 2 — Contact Us to Confirm Lesson Arrangements",
+              text: "Confirm your dates, students’ ability levels, number of students and lesson location with us.",
             },
             {
-              title: "Step 3 — Complete the Google Form",
-              text: "Once the basic arrangement is agreed, we will send you the booking form.",
+              title: "Step 3 — Complete the Booking Form",
+              text: "Enter the lesson arrangements we discussed and your students’ details for us to review.",
             },
             {
-              title: "Step 4 — Accent Sends the Invoice",
-              text: "Accent will email the invoice with the confirmed lesson details and payment instructions. Complete payment through the school.",
+              title: "Step 4 — Receive Your Invoice and Pay",
+              text: "Accent will send your invoice. Please pay by the deadline shown on it. Your instructor and lesson time are not officially reserved before payment.",
             },
             {
-              title: "Step 5 — Booking Confirmed",
-              text: "Your booking is confirmed after invoice payment is complete and you receive our confirmation.",
+              title: "Step 5 — Receive Your Booking Confirmation",
+              text: "After we verify receipt of full payment, we will confirm your booking by private message. Your booking is then complete.",
             },
           ],
           alert:
-            "Sending an enquiry or completing the form does not confirm a booking. Payment must be completed before the lesson is officially booked.",
+            "Completing the form or receiving an invoice does not officially reserve your lesson time. Your booking is complete only after we verify full payment and confirm it by private message.",
         },
         australia: {
           label: "Australia · Perisher",
@@ -661,28 +661,28 @@ export const content = {
           label: "日本 · 北海道 · ACCENT",
           steps: [
             {
-              title: "Step 1 — 聯絡詢問",
-              text: "告訴我們預計日期、人數，以及想學雙板還是單板。",
+              title: "Step 1 — 查看課程價格",
+              text: "先了解課程費用與包含項目。",
             },
             {
-              title: "Step 2 — 確認價格與教練時間",
-              text: "我們會確認課程價格，以及是否有合適的教練時間。",
+              title: "Step 2 — 聯絡確認課程安排",
+              text: "與我們確認日期、學生程度、人數及上課地點。",
             },
             {
-              title: "Step 3 — 填寫 Google Form",
-              text: "確認基本安排後，我們會傳送訂課表單。",
+              title: "Step 3 — 填寫預約表單",
+              text: "填寫討論過的課程安排與學生資料，由我們核對。",
             },
             {
-              title: "Step 4 — Accent 寄送 Invoice",
-              text: "Accent 會依照確認的課程內容寄送 Invoice 與付款方式，請透過學校完成付款。",
+              title: "Step 4 — 收到 Invoice 並付款",
+              text: "Accent 寄送 Invoice，請於帳單指定期限內完成付款。付款前，教練與時段尚未正式保留。",
             },
             {
-              title: "Step 5 — 訂課成功",
-              text: "完成 Invoice 付款並收到我們的確認後，課程才正式成立。",
+              title: "Step 5 — 收到訂課確認",
+              text: "我們核實收到全額款項後，會透過私訊確認，完成訂課。",
             },
           ],
           alert:
-            "送出詢問或填寫表單並不代表已完成訂課。完成付款後，課程才會正式成立。",
+            "填寫表單或收到 Invoice，不代表時段已正式保留。我們核實收到全額款項並透過私訊確認後，才完成訂課。",
         },
         australia: {
           label: "澳洲 · 新州 Perisher",

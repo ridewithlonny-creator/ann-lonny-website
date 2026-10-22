@@ -38,6 +38,8 @@ export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [bookingRegion, setBookingRegion] = useState<"japan" | "australia">("japan");
   const [pricingRegion, setPricingRegion] = useState<"japan" | "australia">("japan");
+  const [copyResult, setCopyResult] = useState<{ locale: Locale; status: "copying" | "copied" | "failed" } | null>(null);
+  const copyStatus = copyResult?.locale === locale ? copyResult.status : null;
   const t = content[locale];
   const activeBooking = t.booking.regions[bookingRegion];
 
@@ -89,6 +91,17 @@ export default function Home() {
   const changeLocale = (nextLocale: Locale) => {
     setLocale(nextLocale);
     setMenuOpen(false);
+    setCopyResult(null);
+  };
+
+  const copyEnquiryTemplate = async () => {
+    setCopyResult({ locale, status: "copying" });
+    try {
+      await navigator.clipboard.writeText(t.contact.enquiryTemplate);
+      setCopyResult({ locale, status: "copied" });
+    } catch {
+      setCopyResult({ locale, status: "failed" });
+    }
   };
 
   return (
@@ -157,6 +170,7 @@ export default function Home() {
             <p className="eyebrow">{t.hero.eyebrow}</p>
             <h1>{t.hero.title}</h1>
             <p className="hero-copy">{t.hero.subtitle}</p>
+            <p className="hero-credentials">{t.hero.credentials}</p>
             <div className="button-row">
               <a className="button button-primary" href="#contact">
                 {t.common.askLesson}
@@ -399,6 +413,8 @@ export default function Home() {
           <div id="pricing-region-panel" aria-live="polite">
             {pricingRegion === "japan" ? (
                 <div className="pricing-panel">
+                  <div className="pricing-overview">
+                  <div>
                   <table className="pricing-table" aria-describedby="pricing-group-note">
                     <caption>{t.pricing.caption}</caption>
                     <thead>
@@ -417,6 +433,13 @@ export default function Home() {
                     </tbody>
                   </table>
                   <p className="pricing-group-note" id="pricing-group-note">{t.pricing.groupNote}</p>
+                  </div>
+                  <aside className="pricing-value" aria-labelledby="pricing-value-title">
+                    <h3 id="pricing-value-title">{t.pricing.value.title}</h3>
+                    <p>{t.pricing.value.training}</p>
+                    <p>{t.pricing.value.background}</p>
+                  </aside>
+                  </div>
                   <dl className="pricing-details">
                     {t.pricing.details.map((detail) => (
                       <div key={detail.label}>
@@ -482,6 +505,17 @@ export default function Home() {
             <p className="eyebrow">{t.contact.eyebrow}</p>
             <h2>{t.contact.title}</h2>
             <p>{t.contact.intro}</p>
+            <div className="enquiry-template">
+              <button className="template-copy-button" type="button" onClick={copyEnquiryTemplate} disabled={copyStatus === "copying"}>
+                {copyStatus === "copying" ? t.contact.copyingTemplate : t.contact.copyTemplate}
+              </button>
+              <p className="template-feedback" role="status" aria-live="polite">
+                {copyStatus === "copied" ? t.contact.templateCopied : copyStatus === "failed" ? t.contact.templateFallback : ""}
+              </p>
+              {copyStatus === "failed" && (
+                <textarea aria-label={t.contact.templateLabel} readOnly value={t.contact.enquiryTemplate} rows={9} onFocus={(event) => event.currentTarget.select()} />
+              )}
+            </div>
           </div>
           <div className="contact-people">
             {contactPeople.map((person) => (

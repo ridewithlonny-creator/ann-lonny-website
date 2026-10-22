@@ -26,6 +26,29 @@ async function render() {
   );
 }
 
+test("Japan pricing explains the training behind the lesson value without changing rates", async () => {
+  const html = await (await render()).text();
+  const pricing = html.match(/<section id="pricing"[\s\S]*?<\/section>/)?.[0] ?? "";
+  assert.match(pricing, /aria-labelledby="pricing-value-title"/);
+  assert.match(pricing, /不只指出問題，更能找出原因/);
+  assert.match(pricing, /為了取得 APSI 單板三級資格/);
+  assert.match(pricing, /大量滑行與教學訓練/);
+  assert.match(pricing, /結合健身教練背景與 5 季以上官方雪校經驗/);
+  assert.match(pricing, /110,000/);
+  assert.match(pricing, /130,000/);
+  assert.match(pricing, /每組 1 位教練，最多 4 人/);
+  assert.match(pricing, /5 小時教學＋1 小時用餐/);
+});
+
+test("hero qualifications and compact enquiry template render without a form", async () => {
+  const html = await (await render()).text();
+  const hero = html.match(/<section id="top"[\s\S]*?<\/section>/)?.[0] ?? "";
+  assert.match(hero, /APSI 單板三級・雙板二級｜5 季以上官方雪校經驗｜中英文教學/);
+  assert.match(html, /class="template-copy-button" type="button">複製詢問範本<\/button>/);
+  assert.match(html, /class="template-feedback" role="status" aria-live="polite"/);
+  assert.doesNotMatch(html, /<textarea|<form\b/);
+});
+
 test("server-renders the Ann&Lonny website and launch metadata", async () => {
   const response = await render();
   assert.equal(response.status, 200);

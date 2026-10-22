@@ -353,6 +353,15 @@ section[id] {
   gap: 10px;
 }
 
+.hero-credentials {
+  max-width: 850px;
+  margin: 0 0 26px;
+  color: var(--white);
+  font-size: 0.95rem;
+  line-height: 1.8;
+  text-wrap: pretty;
+}
+
 .button {
   display: inline-flex;
   min-height: 52px;
@@ -522,6 +531,39 @@ section[id] {
   border: 1px solid var(--line);
   border-radius: var(--radius-large);
   background: var(--white);
+}
+
+.pricing-overview {
+  display: grid;
+  gap: 28px;
+}
+
+.pricing-overview > * {
+  min-width: 0;
+}
+
+.pricing-value {
+  padding: 24px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-large);
+  background: var(--snow);
+}
+
+.pricing-value h3 {
+  font-size: 1.25rem;
+  line-height: 1.5;
+}
+
+.pricing-value p {
+  margin: 16px 0 0;
+  line-height: 1.8;
+}
+
+@media (min-width: 960px) {
+  .pricing-overview {
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+  }
 }
 
 .pricing-table {
@@ -1071,10 +1113,55 @@ section[id] {
   margin-bottom: 20px;
 }
 
-.contact-panel > div:first-child > p:last-child {
+.contact-panel > div:first-child > p {
   max-width: 680px;
   margin-bottom: 0;
   color: var(--ink-soft);
+}
+
+.enquiry-template {
+  margin-top: 20px;
+  max-width: 680px;
+}
+
+.template-copy-button {
+  padding: 10px 16px;
+  min-height: 44px;
+  border: 1px solid var(--line-strong);
+  border-radius: 10px;
+  color: var(--navy);
+  background: transparent;
+  font: inherit;
+  cursor: pointer;
+}
+
+.template-copy-button:hover {
+  background: var(--white);
+}
+
+.template-copy-button:disabled {
+  opacity: 0.65;
+  cursor: wait;
+}
+
+.template-feedback:not(:empty) {
+  margin: 10px 0 0;
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+}
+
+.enquiry-template textarea {
+  display: block;
+  width: 100%;
+  margin-top: 12px;
+  padding: 12px;
+  border: 1px solid var(--line-strong);
+  border-radius: 10px;
+  background: var(--white);
+  color: var(--ink);
+  font: inherit;
+  line-height: 1.6;
+  resize: vertical;
 }
 
 .contact-people {

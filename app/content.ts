@@ -259,6 +259,7 @@ export const content = {
       subtitle:
         "Friendly, professional lessons designed around your goals, confidence and enjoyment.",
       secondaryCta: "How Booking Works",
+      credentials: "APSI Snowboard Level 3 · Alpine Level 2 | 5+ seasons of official snow school experience | Chinese & English",
     },
     about: {
       eyebrow: "About us",
@@ -290,6 +291,11 @@ export const content = {
     },
     pricing: {
       eyebrow: "Lesson pricing",
+      value: {
+        title: "More than spotting a problem — understanding its cause",
+        training: "To earn our APSI Snowboard Level 3 qualifications, we invested in extensive riding and teaching training, developing our ability to observe movements, analyse causes and find suitable adjustments. In lessons, we do more than point out what went wrong: we help you understand why it happens and where to start making changes, giving your practice a clearer direction.",
+        background: "Combined with our fitness coaching background and more than five seasons of official snow school experience, our aim is to offer more than someone to ride with — a learning experience that helps you understand your own movements.",
+      },
       chooseRegion: "Choose lesson pricing region",
       regions: { japan: "Japan", australia: "Australia · Perisher" },
       title: "Plan your day on snow.",
@@ -477,6 +483,12 @@ export const content = {
         instagram: "Instagram",
       },
       prefillLabel: "Suggested message",
+      copyTemplate: "Copy enquiry template",
+      copyingTemplate: "Copying…",
+      templateCopied: "Copied. Paste it into your message and fill in your details.",
+      templateFallback: "Unable to copy automatically. Select and copy the template below.",
+      templateLabel: "Lesson enquiry template",
+      enquiryTemplate: "Hi Ann & Lonny, I would like to enquire about lessons.\nPreferred dates:\nCountry / resort:\nSki or snowboard:\nNumber of students / ages:\nCurrent ability:\nWhat I would like to improve:\nLesson prices I have viewed (Japan / Australia / not yet):",
       linkPlaceholder: "Add this contact link in app/content.ts",
     },
     social: {
@@ -565,6 +577,7 @@ export const content = {
       subtitle:
         "根據你的程度與目標，提供安全、友善並且有趣的雪上學習體驗。",
       secondaryCta: "查看訂課流程",
+      credentials: "APSI 單板三級・雙板二級｜5 季以上官方雪校經驗｜中英文教學",
     },
     about: {
       eyebrow: "關於我們",
@@ -595,6 +608,11 @@ export const content = {
     },
     pricing: {
       eyebrow: "課程價格",
+      value: {
+        title: "不只指出問題，更能找出原因",
+        training: "為了取得 APSI 單板三級資格，我們投入大量滑行與教學訓練，磨練觀察動作、分析原因與調整方法的能力。上課時，不只是告訴你「哪裡做錯」，而是幫你理解「為什麼會這樣、該從哪裡調整」，讓練習更有方向。",
+        background: "結合健身教練背景與 5 季以上官方雪校經驗，我們希望讓你買到的不只是有人帶著滑，而是更清楚理解自己動作的學習過程。",
+      },
       chooseRegion: "選擇課程價格地區",
       regions: { japan: "日本", australia: "澳洲 · Perisher" },
       title: "先了解費用，再安排雪上時光。",
@@ -779,6 +797,12 @@ export const content = {
         instagram: "Instagram",
       },
       prefillLabel: "預填訊息",
+      copyTemplate: "複製詢問範本",
+      copyingTemplate: "複製中…",
+      templateCopied: "已複製，請貼到訊息中並填寫資料。",
+      templateFallback: "無法自動複製，請選取下方範本並手動複製。",
+      templateLabel: "課程詢問範本",
+      enquiryTemplate: "Ann 與 Lonny 你們好，我想詢問課程。\n預計日期：\n國家／雪場：\n雙板或單板：\n學生人數／年齡：\n目前程度：\n想改善的問題：\n已查看的課程價格（日本／澳洲／尚未查看）：",
       linkPlaceholder: "請在 app/content.ts 加入聯絡連結",
     },
     social: {

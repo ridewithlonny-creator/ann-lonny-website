@@ -40,6 +40,23 @@ test("Japan pricing explains the training behind the lesson value without changi
   assert.match(pricing, /5 小時教學＋1 小時用餐/);
 });
 
+test("pricing invites a simple enquiry and WhatsApp prefills the short template", async () => {
+  const html = await (await render()).text();
+  const pricing = html.match(/<section id="pricing"[\s\S]*?<\/section>/)?.[0] ?? "";
+  assert.match(pricing, /href="#contact">詢問可預約日期<\/a>/);
+  assert.match(pricing, /詢問不代表訂課/);
+  const links = [...html.matchAll(/href="(https:\/\/wa\.me\/[^\"]+)"/g)];
+  assert.equal(links.length, 2);
+  const expected = "Ann 與 Lonny 你們好，我想詢問可預約日期。\n預計日期：\n國家／雪場：\n人數／雙板或單板：\n目前程度（不確定也沒關係）：";
+  for (const [, href] of links) {
+    assert.equal(new URL(href).searchParams.get("text"), expected);
+  }
+  assert.deepEqual(links.map(([, href]) => new URL(href).pathname).sort(), ["/61459495550", "/61497131933"]);
+  const source = await readFile(new URL("app/content.ts", projectRoot), "utf8");
+  assert.match(source, /enquiryTemplate: siteConfig.prefilledMessage.en/);
+  assert.match(source, /enquiryTemplate: siteConfig.prefilledMessage.zh/);
+});
+
 test("hero qualifications and compact enquiry template render without a form", async () => {
   const html = await (await render()).text();
   const hero = html.match(/<section id="top"[\s\S]*?<\/section>/)?.[0] ?? "";

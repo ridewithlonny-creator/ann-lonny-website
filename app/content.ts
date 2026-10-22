@@ -62,8 +62,8 @@ export const siteConfig = {
     },
   },
   prefilledMessage: {
-    en: "Hi, I found your website through a friend. I’m interested in a ski or snowboard lesson.",
-    zh: "你好，我是朋友推薦看到網站的，想詢問雙板或單板課程。",
+    en: "Hi Ann & Lonny, I'd like to ask about available lesson dates.\nPreferred dates:\nCountry / resort:\nGroup size / ski or snowboard:\nCurrent ability (not sure is fine):",
+    zh: "Ann 與 Lonny 你們好，我想詢問可預約日期。\n預計日期：\n國家／雪場：\n人數／雙板或單板：\n目前程度（不確定也沒關係）：",
   } satisfies Record<Locale, string>,
 };
 
@@ -314,8 +314,8 @@ export const content = {
       exclusions: "Lift passes, equipment rental, meals and transport are not included and must be paid separately.",
       fullDayNote: "Full-day lessons only; half-day lessons are not currently available.",
       childrenNote: "One-to-one lessons are recommended for children aged 6 and under, as outlined in our FAQ.",
-      cta: "Ask about dates & instructor availability",
-      bookingNote: "Share your dates, starting location, group size and ski or snowboard preference. Lessons are subject to instructor availability.",
+      cta: "Ask about available dates",
+      bookingNote: "Not sure which lesson suits you? Share your dates, group size and current ability, and we'll discuss the options. An enquiry is not a booking.",
       australia: {
         title: "Australia · Perisher lesson prices",
         description: "Prices vary by lesson time and booking date. Check the latest price on the Perisher website, then contact us to confirm the lesson time and obtain the instructor name to request before booking.",
@@ -488,7 +488,7 @@ export const content = {
       templateCopied: "Copied. Paste it into your message and fill in your details.",
       templateFallback: "Unable to copy automatically. Select and copy the template below.",
       templateLabel: "Lesson enquiry template",
-      enquiryTemplate: "Hi Ann & Lonny, I would like to enquire about lessons.\nPreferred dates:\nCountry / resort:\nSki or snowboard:\nNumber of students / ages:\nCurrent ability:\nWhat I would like to improve:\nLesson prices I have viewed (Japan / Australia / not yet):",
+      enquiryTemplate: siteConfig.prefilledMessage.en,
       linkPlaceholder: "Add this contact link in app/content.ts",
     },
     social: {
@@ -631,8 +631,8 @@ export const content = {
       exclusions: "雪票、雪具租借、餐飲與交通不包含在課程費用內，需另外支付。",
       fullDayNote: "目前僅提供全日課，不提供半日課。",
       childrenNote: "依常見問題中的兒童課程建議，6 歲以下兒童建議安排 1 對 1 教學。",
-      cta: "詢問日期與教練空檔",
-      bookingNote: "告訴我們你的日期、上課起點、人數與雙板或單板需求；實際安排依教練空檔確認。",
+      cta: "詢問可預約日期",
+      bookingNote: "不確定適合怎麼上課？告訴我們日期、人數與目前程度，一起確認安排。詢問不代表訂課。",
       australia: {
         title: "澳洲 · Perisher 課程價格",
         description: "價格依上課時段與訂課日期浮動，請至 Perisher 官網查看最新價格。確認價格後，請先聯絡我們確認上課時間與指定教練姓名，再進行訂課。",
@@ -802,7 +802,7 @@ export const content = {
       templateCopied: "已複製，請貼到訊息中並填寫資料。",
       templateFallback: "無法自動複製，請選取下方範本並手動複製。",
       templateLabel: "課程詢問範本",
-      enquiryTemplate: "Ann 與 Lonny 你們好，我想詢問課程。\n預計日期：\n國家／雪場：\n雙板或單板：\n學生人數／年齡：\n目前程度：\n想改善的問題：\n已查看的課程價格（日本／澳洲／尚未查看）：",
+      enquiryTemplate: siteConfig.prefilledMessage.zh,
       linkPlaceholder: "請在 app/content.ts 加入聯絡連結",
     },
     social: {

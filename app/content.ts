@@ -257,7 +257,7 @@ export const content = {
       eyebrow: "PERISHER, NSW · ACCENT, HOKKAIDO JAPAN",
       title: "Personalised Ski & Snowboard Lessons",
       subtitle:
-        "Friendly, professional lessons designed around your goals, confidence and enjoyment.",
+        "From your first day on snow to your next breakthrough. Beginner or experienced, learn to understand your movements and build confidence with lessons shaped around your ability and goals.",
       secondaryCta: "How Booking Works",
       credentials: "APSI Snowboard Level 3 · Alpine Level 2 | 5+ seasons of official snow school experience | Chinese & English",
     },
@@ -292,9 +292,9 @@ export const content = {
     pricing: {
       eyebrow: "Lesson pricing",
       value: {
-        title: "More than spotting a problem — understanding its cause",
-        training: "To earn our APSI Snowboard Level 3 qualifications, we invested in extensive riding and teaching training, developing our ability to observe movements, analyse causes and find suitable adjustments. In lessons, we do more than point out what went wrong: we help you understand why it happens and where to start making changes, giving your practice a clearer direction.",
-        background: "Combined with our fitness coaching background and more than five seasons of official snow school experience, our aim is to offer more than someone to ride with — a learning experience that helps you understand your own movements.",
+        title: "Give every practice a clear purpose.",
+        training: "We combine riding technique, movement analysis and teaching experience to identify what needs attention and choose exercises that suit you.",
+        background: "Whether you are starting out or working through a plateau, we help you understand what you are learning and what to work on next.",
       },
       chooseRegion: "Choose lesson pricing region",
       regions: { japan: "Japan", australia: "Australia · Perisher" },
@@ -333,24 +333,12 @@ export const content = {
     },
     why: {
       eyebrow: "Why learn with us",
-      title: "Personalised, science-informed and patiently encouraging coaching.",
+      title: "Skilled on snow. Clear in our coaching.",
       items: [
-        {
-          title: "Personalised Lessons",
-          text: "Lessons adapt to each student’s ability, goals, learning state and the terrain in front of us. Whether you are adventurous or prefer a more cautious pace, we can adjust the lesson at any time and break each movement into smaller, manageable steps.",
-        },
-        {
-          title: "5 Seasons of Snow School Experience",
-          text: "We bring extensive experience from around 300–400 teaching hours each season in official snow schools. From children preparing for ski racing to adults in their sixties trying snowboarding for the first time, we have worked with students of many ages, abilities and learning styles. If you have any questions or concerns before the lesson, you are always welcome to contact us in advance.",
-        },
-        {
-          title: "Clear Communication",
-          text: "Every movement is explained in terms of what to do, why it matters and how to do it. Our fitness coaching background helps you understand how to use the relevant muscles and joints, while more than five seasons of official snow school teaching experience helps us identify the cause of a problem more quickly and explain how to correct it in clear, easy-to-understand terms.",
-        },
-        {
-          title: "Safe and Enjoyable",
-          text: "Safety comes first while progress and enjoyment remain part of the lesson. When we stop to explain, we choose an appropriate and safer place to do so.",
-        },
+        { title: "Technique you can see and understand", text: "We both hold APSI Snowboard Level 3, an advanced qualification within APSI's four-level snowboard pathway covering riding, demonstration, teaching and rider analysis. Through ongoing training, clear demonstrations and explanations, we help you understand the essentials. Our ski qualification is APSI Alpine Level 2." },
+        { title: "Find the cause, not just the symptom", text: "We look closely at your riding to quickly identify the key factors affecting your movements. Then we choose targeted exercises to suit your ability, how you learn and your response on the snow — so you understand what to adjust and why." },
+        { title: "Feedback that guides your next attempt", text: "Observation, timely verbal feedback, demonstrations and personal exercises help you explore the difference an adjustment can make. We use video analysis when helpful, rather than in every lesson. Progress varies with each student and the conditions." },
+        { title: "Experience, patience and safety", text: "Each of us has more than five seasons of official snow school teaching experience. From first-timers to experienced students, we adapt the pace and terrain to your ability, confidence, understanding and the day's snow conditions, keeping safety and clear communication central." },
       ],
     },
     booking: {
@@ -426,14 +414,12 @@ export const content = {
       intro: "If your question is not covered here, contact us and we will be happy to discuss it with you.",
       items: [
         {
-          question: "Why do our lessons in Japan cost more than some other instructors?",
-          answer:
-            "We are both APSI Level 3 snowboard instructors. This advanced qualification reflects not only riding and teaching ability, but also the professional knowledge needed to train other instructors, so our Japan lesson rate is higher than a standard instructor rate. We can identify the root cause of movement issues more quickly and use one key adjustment to improve several related problems. Progress always depends on the student and conditions, but our goal is to help you improve more efficiently—for example, addressing in one lesson issues that might otherwise take multiple lessons—so you can spend more time enjoying skiing or snowboarding in Japan.",
+          question: "What does our Japan lesson price reflect?",
+          answer: "Our price reflects the combination of technical training, movement analysis, personalised exercises and teaching experience, not a certificate alone. APSI Snowboard Level 3 is an advanced qualification covering riding, demonstration, teaching and rider analysis; our ski qualification is APSI Alpine Level 2. Beginners work on safe foundations, control and confidence, while experienced students can focus on movement issues and personal goals. We explain the reasons behind adjustments and offer feedback as you practise. Progress depends on the student and conditions, with no guaranteed result or fixed timeline.",
         },
         {
           question: "Can I arrange a lesson if I am staying in Hanazono?",
-          answer:
-            "Our current plan is to start lessons in Hirafu or Annupuri, then ski or snowboard over to Hanazono, depending on your ability and the trails and lifts open that day. Hanazono's official rules for the upcoming season have not yet been announced; we plan to check again in October 2026. Final arrangements remain subject to the official rules.",
+          answer: "For the 2026–27 season, we do not arrange meeting points or start lessons within HANAZONO. If you would like to ride there, please contact us in advance to discuss starting at another permitted location and skiing or snowboarding into HANAZONO. Arrangements depend on your ability, the day's snow conditions and resort rules. Transport between resorts is not confirmed.",
         },
         {
           question: "Does sending an enquiry confirm my booking?",
@@ -575,7 +561,7 @@ export const content = {
       eyebrow: "澳洲新州 PERISHER · 日本北海道 ACCENT",
       title: "專屬於你的雙板與單板課程",
       subtitle:
-        "根據你的程度與目標，提供安全、友善並且有趣的雪上學習體驗。",
+        "從第一次上雪，到下一次突破。不論初學或進階，我們都會依你的程度與目標調整課程，幫助你理解動作、建立信心，找到適合自己的進步方式。",
       secondaryCta: "查看訂課流程",
       credentials: "APSI 單板三級・雙板二級｜5 季以上官方雪校經驗｜中英文教學",
     },
@@ -609,9 +595,9 @@ export const content = {
     pricing: {
       eyebrow: "課程價格",
       value: {
-        title: "不只指出問題，更能找出原因",
-        training: "為了取得 APSI 單板三級資格，我們投入大量滑行與教學訓練，磨練觀察動作、分析原因與調整方法的能力。上課時，不只是告訴你「哪裡做錯」，而是幫你理解「為什麼會這樣、該從哪裡調整」，讓練習更有方向。",
-        background: "結合健身教練背景與 5 季以上官方雪校經驗，我們希望讓你買到的不只是有人帶著滑，而是更清楚理解自己動作的學習過程。",
+        title: "每一次練習，都有清楚的方向。",
+        training: "結合專業滑行技術、動作分析與教學經驗，我們幫你找出需要調整的地方，安排適合自己的練習。",
+        background: "不論第一次上雪，或希望突破技巧瓶頸，都能更清楚理解正在學什麼，以及下一步如何練習。",
       },
       chooseRegion: "選擇課程價格地區",
       regions: { japan: "日本", australia: "澳洲 · Perisher" },
@@ -649,24 +635,12 @@ export const content = {
     },
     why: {
       eyebrow: "為什麼選擇我們",
-      title: "個人化、科學且耐心鼓勵的教學。",
+      title: "有技術，也懂得怎麼教。",
       items: [
-        {
-          title: "根據學生需求調整課程",
-          text: "依照學生的程度、目標、學習狀態與當下地形，隨時調整課程內容與練習方式。不管你是勇敢嘗試，還是比較謹慎的學生，我們都能即時調整上課內容，也可以把每個動作拆解成更細的小步驟，讓不同學習類型的學生都能安心練習。",
-        },
-        {
-          title: "5 季官方雪校教學經驗",
-          text: "我們擁有豐富的教學經驗，每季約 300–400 小時，在官方雪校累積紮實的一線教學時數。從準備參加競速的小朋友，到 60 多歲第一次學習單板的成人，我們都曾教過，也熟悉不同年齡、程度與學習方式的學生。如有任何疑問或擔心，都歡迎在課前先與我們討論。",
-        },
-        {
-          title: "清楚易懂的教學",
-          text: "每個動作都會清楚說明「做什麼、為什麼做、怎麼做」，並結合健身教練經驗，幫助你理解需要如何運用肌肉與關節。加上 5 季以上的官方雪校教學經驗，我們能更快找出問題的原因，並用清楚易懂的方式說明如何調整。",
-        },
-        {
-          title: "安全並享受學習過程",
-          text: "我們最重視安全；在進步的同時，也保留滑雪原本的樂趣。需要停下講解時，我們會選擇相對安全的位置。",
-        },
+        { title: "專業技術與清楚示範", text: "我們都持有 APSI 單板三級資格，這是 APSI 四級單板認證制度中的進階資格，涵蓋滑行、示範、教學與動作分析。我們持續訓練，透過清楚的示範與解釋，幫你理解動作重點；雙板資格則是 APSI 雙板二級。" },
+        { title: "找出原因，讓練習對準問題", text: "我們擅長從實際滑行中，快速辨識影響動作的關鍵原因，再依你的程度、理解方式與當下反應，安排有針對性的練習。不只是指出哪裡有問題，也讓你知道為什麼，以及可以從哪裡調整。" },
+        { title: "即時回饋，找到調整的感覺", text: "透過現場觀察、口頭回饋、動作示範與個人化練習，讓你有機會感受調整前後的差異；視需要使用滑行影片分析，而非每堂課固定提供。實際進度仍依個人狀況與雪況而異。" },
+        { title: "經驗、耐心與安全同樣重要", text: "我們各自有 5 季以上官方雪校教學經驗。無論第一次上雪或已有經驗，都會依你的能力、信心、理解情況與當天雪況，調整地形與學習步調，重視安全、清楚溝通，也保留滑雪的樂趣。" },
       ],
     },
     booking: {
@@ -741,14 +715,12 @@ export const content = {
       intro: "如果這裡沒有回答到你的問題，歡迎直接聯絡我們討論。",
       items: [
         {
-          question: "為什麼我們在日本的課程價格比一般教練高？",
-          answer:
-            "我們兩位都是 APSI 單板三級教練。三級資格不只代表個人滑行與教學能力，也包含培訓其他教練所需的專業能力，因此日本課程價格會高於一般教練。我們能更快找出動作問題的根本原因，並透過一個關鍵調整同時改善多個相關問題。實際進度仍會因學生程度與雪況而異，但我們的目標是幫助你更有效率地進步；例如，原本可能需要多堂課處理的問題，有機會在一堂課內找到共同原因並一起改善，讓你節省學習時間，把更多時間留給享受日本滑雪。",
+          question: "日本課程價格包含哪些教學價值？",
+          answer: "價格反映的是技術訓練、動作分析、個人化練習與教學經驗的結合，而不只是一張證照。APSI 單板三級是涵蓋滑行、示範、教學與動作分析的進階資格；我們的雙板資格是 APSI 雙板二級。初學者著重安全基礎、控制與信心，已有經驗的學生則可針對動作問題及個人目標練習。我們會解釋調整原因，並在練習中提供回饋；進度仍依個人與雪況而異，不保證固定時間或成果。",
         },
         {
           question: "住在 Hanazono，可以安排課程嗎？",
-          answer:
-            "目前規劃需從 Hirafu（比羅夫） 或 Annupuri（安努普利） 開始上課，再依學生程度及當天雪道、纜車開放情況，滑行前往 Hanazono。Hanazono 本雪季的官方規定尚未公布，預計於 2026 年 10 月多再次確認，最終安排以官方規定為準。",
+          answer: "2026–27 雪季，目前我們不安排在 HANAZONO 園區內集合或開始課程。若希望前往 HANAZONO 滑雪，歡迎提前與我們討論從其他允許地點開始課程，並滑行進入 HANAZONO 的安排。實際安排仍需考量學生程度、當天雪況及雪場規定；跨雪場接送服務尚未確認。",
         },
         {
           question: "送出詢問後，是否代表已經完成訂課？",

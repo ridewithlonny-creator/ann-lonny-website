@@ -174,7 +174,7 @@ test("Hokkaido, Hanazono FAQ, group limits and shared Instagram render correctly
   assert.doesNotMatch(html, /日本北海道二世谷|日本二世谷 Accent/);
   const questions = [...html.matchAll(/<summary><span>(\d+)<\/span>(.*?)<i /g)];
   assert.match(questions[0][2], /日本課程價格包含哪些教學價值/);
-  assert.match(questions[1][2], /住在 Hanazono/);
+  assert.match(questions[1][2], /可以在 HANAZONO（花園）上課嗎/);
   assert.match(questions[5][2], /最多幾人/);
   const faq = html.match(/<div class="faq-list"[^>]*>([\s\S]*?)<\/section>/)[1];
   const details = [...faq.matchAll(/<details([^>]*)>/g)];
@@ -183,8 +183,14 @@ test("Hokkaido, Hanazono FAQ, group limits and shared Instagram render correctly
   for (const detail of details.slice(1)) assert.doesNotMatch(detail[1], /\bopen\b/);
   assert.match(html, /從其他允許地點開始課程/);
   assert.match(html, /Hirafu（比羅夫）／Annupuri（安努普利）/);
-  assert.match(html, /2026–27 雪季，目前我們不安排在 HANAZONO 園區內集合或開始課程/);
-  assert.match(html, /跨雪場接送服務尚未確認/);
+  assert.match(html, /2026–27 雪季，我們目前不在 HANAZONO 園區內開始課程/);
+  assert.match(html, /確認接載至其他允許的雪場上課的安排/);
+  assert.match(html, /實際集合、接送地點、交通及課程安排，請事先與我們確認/);
+  assert.doesNotMatch(html, /跨雪場接送服務尚未確認/);
+  const contentSource = await readFile(new URL("app/content.ts", projectRoot), "utf8");
+  assert.match(contentSource, /we do not start lessons within HANAZONO/);
+  assert.match(contentSource, /picking you up to take you to another permitted resort/);
+  assert.match(contentSource, /confirm the meeting and pick-up locations, transport and lesson arrangements with us in advance/);
   assert.doesNotMatch(html, /2026 年 10 月多再次確認/);
   assert.match(html, /澳洲私人教練課每位教練最多帶 5 人/);
   assert.match(html, /日本課程每位教練帶一組，最多 4 人/);

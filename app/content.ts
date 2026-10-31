@@ -418,8 +418,8 @@ export const content = {
           answer: "Our price reflects the combination of technical training, movement analysis, personalised exercises and teaching experience, not a certificate alone. APSI Snowboard Level 3 is an advanced qualification covering riding, demonstration, teaching and rider analysis; our ski qualification is APSI Alpine Level 2. Beginners work on safe foundations, control and confidence, while experienced students can focus on movement issues and personal goals. We explain the reasons behind adjustments and offer feedback as you practise. Progress depends on the student and conditions, with no guaranteed result or fixed timeline.",
         },
         {
-          question: "Can I arrange a lesson if I am staying in Hanazono?",
-          answer: "For the 2026–27 season, we do not arrange meeting points or start lessons within HANAZONO. If you would like to ride there, please contact us in advance to discuss starting at another permitted location and skiing or snowboarding into HANAZONO. Arrangements depend on your ability, the day's snow conditions and resort rules. Transport between resorts is not confirmed.",
+          question: "Can I have a lesson at HANAZONO?",
+          answer: "For the 2026–27 season, we do not start lessons within HANAZONO. If you would like to ski or snowboard there, contact us in advance to discuss starting at another permitted location and riding into HANAZONO, subject to your ability, the day's snow conditions and resort rules. If you are staying in HANAZONO, we can also discuss picking you up to take you to another permitted resort for your lesson. Please confirm the meeting and pick-up locations, transport and lesson arrangements with us in advance.",
         },
         {
           question: "Does sending an enquiry confirm my booking?",
@@ -719,8 +719,8 @@ export const content = {
           answer: "價格反映的是技術訓練、動作分析、個人化練習與教學經驗的結合，而不只是一張證照。APSI 單板三級是涵蓋滑行、示範、教學與動作分析的進階資格；我們的雙板資格是 APSI 雙板二級。初學者著重安全基礎、控制與信心，已有經驗的學生則可針對動作問題及個人目標練習。我們會解釋調整原因，並在練習中提供回饋；進度仍依個人與雪況而異，不保證固定時間或成果。",
         },
         {
-          question: "住在 Hanazono，可以安排課程嗎？",
-          answer: "2026–27 雪季，目前我們不安排在 HANAZONO 園區內集合或開始課程。若希望前往 HANAZONO 滑雪，歡迎提前與我們討論從其他允許地點開始課程，並滑行進入 HANAZONO 的安排。實際安排仍需考量學生程度、當天雪況及雪場規定；跨雪場接送服務尚未確認。",
+          question: "可以在 HANAZONO（花園）上課嗎？",
+          answer: "2026–27 雪季，我們目前不在 HANAZONO 園區內開始課程。如果希望前往 HANAZONO 滑雪，可以提前與我們討論從其他允許地點開始課程，再依學生程度、當天雪況與雪場規定安排滑行進入。如果你住在 HANAZONO，也可以提前聯絡我們，確認接載至其他允許的雪場上課的安排。實際集合、接送地點、交通及課程安排，請事先與我們確認。",
         },
         {
           question: "送出詢問後，是否代表已經完成訂課？",

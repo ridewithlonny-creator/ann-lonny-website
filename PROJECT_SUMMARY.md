@@ -5,10 +5,10 @@
 ## 核對基準
 
 - 最後核對日期：2026 年 10 月 31 日。
-- Phase 1 working tree changes：`codex/content-conversion-phase1` 位於 `AL品牌/website-phase1`，以正式備份 `bd56526827f30f9703fdeddbc89b5f97f32cfdbf` 為基準；未 Commit、Push 或 Deploy，正式網站與原本工作目錄未變。
+- Phase 1 已依使用者人工驗收發布：`67ba19260a2dc804bc81356a159aeee7d888a677` 由 `codex/content-conversion-phase1` 快轉推送 GitHub main，Vercel Production 為 READY，原正式網址已對應此 Commit；中英文主要文字、FAQ 及語言切換已核對，瀏覽器無錯誤。備份 Tag 與原始工作目錄保留，後續文件提交不改網站程式。
 - 本次雙語修改僅 Hero 介紹、Why 四項價值、價格價值及 FAQ 前兩題；強調找出原因、針對性練習與即時回饋，影片分析視需要使用，不保證立即改善；六種課程、About、人物介紹、價格政策、評價、訂課與聯絡資料經結構比較確認完整保留。
 - 驗證：TypeScript、相關 ESLint、vinext 建置、Next.js webpack 建置與 10 項測試通過；Turbopack 不接受跨目錄依賴連結，故使用命令列 webpack 選項，不改建置設定。Worktree 以 node_modules 目錄連結重用既有依賴，未安裝或更新套件。
-- 本機預覽 `http://127.0.0.1:3001/` 已檢查中英文手機 Hero、桌面 Why、語言切換、澳洲流程切換及 FAQ 展開，瀏覽器無錯誤；未實際對外詢問或預約，尚待使用者審閱草稿。
+- 本機預覽 `http://127.0.0.1:3001/` 已檢查中英文手機 Hero、桌面 Why、語言切換、澳洲流程切換及 FAQ 展開，瀏覽器無錯誤；已由使用者完成文案、視覺及 HANAZONO 人工驗收，未實際對外詢問或預約。
 - APSI Snowboard Level 3 的教學、示範及滑行分析範圍對照 https://www.apsi.net.au/courses-events/levelthree ，不再使用培訓教練或一堂抵多堂的宣傳。
 - 本次正式發布：`6fea3c1` 已將日本價格區「詢問可預約日期」、詢問不代表訂課提醒及雙語簡短範本發布至原 Vercel 網址；平台回報 success，正式中英文文字、複製提示與 WhatsApp 連結參數已核對一致，網址、價格及版面不變。
 - 雙語複製範本與 WhatsApp 共用簡短的日期、地點、人數／項目及程度欄位，不預設客人已看過價格，保留所有聯絡方式；僅預填，仍由客人自行送出。
